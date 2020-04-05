@@ -1,0 +1,22 @@
+---
+dist: bionic
+language: ruby
+rvm:
+  - '2.7'
+deploy:
+  provider: rubygems
+  api_key:
+    secure: ""
+  gem: voxpupuli-acceptance
+  on:
+    tags: true
+    repo: voxpupuli/voxpupuli-acceptance
+    rvm: '2.7'
+
+notifications:
+  email: false
+  irc:
+    on_success: always
+    on_failure: always
+    channels:
+      - "chat.freenode.org#voxpupuli-notifications"
