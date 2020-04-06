@@ -6,7 +6,7 @@ rvm:
 deploy:
   provider: rubygems
   api_key:
-    secure: ""
+    secure: "vI9ZQFh/z5EmDvu3ZElkWcHenVhDZep0UhquzV6r6Hmj68utJH0PPu7osOqou7urb1y2lhMc2dcUJfelGM3Xz0ZnK4vcMrxtXRkLQw4gKyF7Ka07jrp52A4DGe2GFk/myeWsVCB7BO/vHPNDDU9o3o+6dAsvoZ97atMIfzrSboanXkhoL4tM/hWXEwlUr4j05pNSMzvhltojo18Tb63yQwSOiPiOD5UlUL2AmS+uhpir3//XyLv4dk2iVoIXlNi/ZJRIhUYnpBZpyNimxIkXJOenosbw5753e1IWy6JeShl3dyh0+7EWcIj7J9MXo3gyugGKaPl+WG55Dx01YyWI1Shv7NoRjZsrFL85JW0WmyNPKQfxUwtJUrsz8xm/7hd8KA40KwkBzTUJSMBVLSKvnFWYsbfQdbeWdUBWX/cvjAFiQ0sjFICpTNG8XYMAhK/IoGEbqwrANqSQlboms9E9Va4EtFdFoW18MYDn0Ub+h/1XJ2OS6yI1jzZjrT3XQ2FuYYBl1mE9wqhXbSHKSsTAXSNjuRJfIiBK7etq+TIVEKbqdcBER5yPZkmBGKhqeXPpM3/s9OI7hwBnQY9DKlrnCG7sVBa3IVtrzyJj1+wL3Tqu96QqOKvFYurKVvKwifJe9n0LsOghCVnS7/gX/OJbo/0T/N3FDFzbHtjznLxCOjw="
   gem: voxpupuli-acceptance
   on:
     tags: true
