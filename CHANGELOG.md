@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.1.1) (2020-04-06)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.1.0...0.1.1)
+
+**Merged pull requests:**
+
+- Add a default rake task [\#4](https://github.com/voxpupuli/voxpupuli-acceptance/pull/4) ([ekohl](https://github.com/ekohl))
+
 ## [0.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.1.0) (2020-04-06)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0ac3f59d43beced663c9dbf6ff9999f9549358d0...0.1.0)
