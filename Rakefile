@@ -1,3 +1,6 @@
+task :default do
+end
+
 begin
   require 'github_changelog_generator/task'
 
