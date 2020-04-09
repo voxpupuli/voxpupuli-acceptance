@@ -23,7 +23,7 @@ It is also possible to do per host configuration
 require 'voxpupuli/acceptance/spec_helper'
 
 configure_beaker do |host|
-  if fact_on_host, 'os.name') == 'CentOS'
+  if fact_on(host, 'os.name') == 'CentOS'
     install_package(host, 'epel-release')
   end
 end
