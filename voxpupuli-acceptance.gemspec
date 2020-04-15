@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'bcrypt_pbkdf'
   s.add_runtime_dependency 'beaker', '>= 4.2.0'
   s.add_runtime_dependency 'beaker-docker'
+  s.add_runtime_dependency 'beaker-vagrant'
   s.add_runtime_dependency 'beaker-hostgenerator', '>= 1.1.22'
   s.add_runtime_dependency 'beaker-module_install_helper'
   s.add_runtime_dependency 'beaker-puppet'
