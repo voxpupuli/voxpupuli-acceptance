@@ -1,4 +1,4 @@
-def configure_beaker(&block)
+def configure_beaker(modules: :metadata, &block)
   ENV['PUPPET_INSTALL_TYPE'] ||= 'agent'
   ENV['BEAKER_PUPPET_COLLECTION'] ||= 'puppet6'
   ENV['BEAKER_debug'] ||= 'true'
@@ -7,8 +7,14 @@ def configure_beaker(&block)
   require 'beaker-rspec'
   require 'beaker-puppet'
   require 'beaker/puppet_install_helper'
-  require 'beaker/module_install_helper'
-  $module_source_dir = get_module_source_directory caller
+
+  case modules
+  when :metadata
+    require 'beaker/module_install_helper'
+    $module_source_dir = get_module_source_directory caller
+  when :fixtures
+    require_relative 'fixtures'
+  end
 
   run_puppet_install_helper unless ENV['BEAKER_provision'] == 'no'
 
@@ -18,8 +24,14 @@ def configure_beaker(&block)
 
     # Configure all nodes in nodeset
     c.before :suite do
-      install_module
-      install_module_dependencies
+      case modules
+      when :metadata
+        install_module
+        install_module_dependencies
+      when :fixtures
+        fixture_modules = File.join(Dir.pwd, 'spec', 'fixtures', 'modules')
+        Voxpupupli::Acceptance::Fixtures.install_fixture_modules_on(hosts, fixture_modules)
+      end
 
       if block
         hosts.each do |host|
