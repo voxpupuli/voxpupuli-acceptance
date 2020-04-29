@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.2.0) (2020-04-29)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.1.1...0.2.0)
+
+**Implemented enhancements:**
+
+- Add fixtures module helper [\#8](https://github.com/voxpupuli/voxpupuli-acceptance/pull/8) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Fix typo in README.md [\#6](https://github.com/voxpupuli/voxpupuli-acceptance/pull/6) ([wbclark](https://github.com/wbclark))
+
 ## [0.1.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.1.1) (2020-04-06)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.1.0...0.1.1)
