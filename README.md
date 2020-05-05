@@ -20,7 +20,7 @@ configure_beaker
 It is also possible to do per host configuration
 
 ```ruby
-require 'voxpupuli/acceptance/spec_helper'
+require 'voxpupuli/acceptance/spec_helper_acceptance'
 
 configure_beaker do |host|
   if fact_on(host, 'os.name') == 'CentOS'
