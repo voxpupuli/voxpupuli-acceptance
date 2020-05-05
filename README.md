@@ -1,5 +1,10 @@
 # Voxpupuli Acceptance Gem
 
+[![Build Status](https://img.shields.io/travis/voxpupuli/voxpupuli-acceptance/master.svg?style=flat-square)](https://travis-ci.org/voxpupuli/voxpupuli-acceptance)
+[![License](https://img.shields.io/github/license/voxpupuli/voxpupuli-acceptance.svg)](https://github.com/voxpupuli/voxpupuli-acceptance/blob/master/LICENSE)
+[![Gem Version](https://img.shields.io/gem/v/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
+[![Gem Downloads](https://img.shields.io/gem/dt/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
+
 This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules. This Gem provides common functionality for all beaker based acceptance testing. The aim is to reduce the boiler plate and need for modulesync.
 
 # Usage
@@ -20,7 +25,7 @@ configure_beaker
 It is also possible to do per host configuration
 
 ```ruby
-require 'voxpupuli/acceptance/spec_helper'
+require 'voxpupuli/acceptance/spec_helper_acceptance'
 
 configure_beaker do |host|
   if fact_on(host, 'os.name') == 'CentOS'
