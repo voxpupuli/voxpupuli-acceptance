@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.2.1) (2020-05-20)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.2.0...0.2.1)
+
+**Merged pull requests:**
+
+- Avoid broken beaker versions 4.22.0 and 4.23.0 [\#11](https://github.com/voxpupuli/voxpupuli-acceptance/pull/11) ([dhoppe](https://github.com/dhoppe))
+- Fix typo in README.md / Add Badges to README.md [\#10](https://github.com/voxpupuli/voxpupuli-acceptance/pull/10) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [0.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.2.0) (2020-04-29)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.1.1...0.2.0)
