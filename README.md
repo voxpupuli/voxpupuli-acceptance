@@ -90,3 +90,41 @@ It's also possible to skip module installation altogether, giving the module dev
 ```ruby
 configure_beaker(modules: nil)
 ```
+
+## Environment variables to facts
+
+It can be useful to provide facts via environment variables. A possible use is run the test suite with version 1.0 and 1.1. Often it's much easier to run the entire suite with version 1.0 and run it with 1.1 in a complete standalone fashion.
+
+Voxpupuli-acceptance converts all environment variables starting with `BEAKER_FACTER_` and stores them in `/etc/facter/facts.d/voxpupuli-acceptance-env.json` on the target machine. All environment variables are converted to lowercase.
+
+Given following `spec_helper_acceptance.rb` is used:
+
+```ruby
+require 'voxpupuli/acceptance/spec_helper_acceptance'
+
+MANIFEST = <<PUPPET
+class { 'mymodule':
+  version => fact('mymodule_version'),
+}
+PUPPET
+
+configure_beaker do |host|
+  apply_manifest_on(host, MANIFEST, catch_failures: true)
+end
+```
+
+Then it can be tested with:
+```bash
+BEAKER_FACTER_MYMODULE_VERSION=1.0 bundle exec rake beaker
+BEAKER_FACTER_MYMODULE_VERSION=1.1 bundle exec rake beaker
+```
+
+Many CI systems make it easy to build a matrix with this.
+
+If no environment variables are present, the file is removed. It is not possible to store structured facts.
+
+This behavior can be disabled altogether:
+
+```ruby
+configure_beaker(configure_facts_from_env: false)
+```
