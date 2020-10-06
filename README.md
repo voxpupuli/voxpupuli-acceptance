@@ -22,17 +22,7 @@ require 'voxpupuli/acceptance/spec_helper'
 configure_beaker
 ```
 
-It is also possible to do per host configuration
-
-```ruby
-require 'voxpupuli/acceptance/spec_helper_acceptance'
-
-configure_beaker do |host|
-  if fact_on(host, 'os.name') == 'CentOS'
-    install_package(host, 'epel-release')
-  end
-end
-```
+# Running tests
 
 This module provides no rake helpers but leaves that to [puppetlabs_spec_helper](https://github.com/puppetlabs/puppetlabs_spec_helper). Commonly invoked as:
 
@@ -46,9 +36,31 @@ Other common environment variables:
 * `BEAKER_destroy` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures
 * `BEAKER_provision` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_destroy`
 
-# Modules
+Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
 
-## Metadata
+```bash
+BEAKER_setfile=centos7-64 bundle exec rspec spec/acceptance/my_test.rb
+```
+
+# Customizing host configuration
+
+## Per host configuration
+
+It is also possible to do per host configuration by providing a block:
+
+```ruby
+require 'voxpupuli/acceptance/spec_helper_acceptance'
+
+configure_beaker do |host|
+  if fact_on(host, 'os.name') == 'CentOS'
+    install_package(host, 'epel-release')
+  end
+end
+```
+
+## Installing Puppet Modules
+
+### Metadata
 
 By default the module uses [beaker-module_install_helper](https://github.com/puppetlabs/beaker-module_install_helper). Its approach is copying the module and then install every dependency as listed in the module's metadata.json. This is a slow process and if the latest modules aren't accepted, it can lead to problems.
 
@@ -57,7 +69,7 @@ By default the module uses [beaker-module_install_helper](https://github.com/pup
 configure_beaker(modules: :metadata)
 ```
 
-## Fixtures
+### Fixtures
 
 An alternative is to use the fixtures:
 
@@ -72,7 +84,7 @@ This will switch to use [puppet-modulebuilder](https://github.com/puppetlabs/pup
 task :beaker => "spec_prep"
 ```
 
-## None
+### None
 
 It's also possible to skip module installation altogether, giving the module developer complete freedom to handle this.
 ```ruby
