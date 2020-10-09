@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.3.0) (2020-10-09)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.2.1...0.3.0)
+
+**Implemented enhancements:**
+
+- Add support to store environment variables as facts [\#13](https://github.com/voxpupuli/voxpupuli-acceptance/pull/13) ([ekohl](https://github.com/ekohl))
+
 ## [0.2.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.2.1) (2020-05-20)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.2.0...0.2.1)
