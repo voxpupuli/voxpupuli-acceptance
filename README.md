@@ -5,7 +5,7 @@
 [![Gem Version](https://img.shields.io/gem/v/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
 [![Gem Downloads](https://img.shields.io/gem/dt/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
 
-This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules. This Gem provides common functionality for all beaker based acceptance testing. The aim is to reduce the boiler plate and need for modulesync.
+This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules using [beaker](https://github.com/voxpupuli/beaker). This Gem provides common functionality for all beaker based acceptance testing. The aim is to reduce the boiler plate and need for modulesync.
 
 # Usage
 Add the `voxpupuli-acceptance` Gem to your `Gemfile`:
@@ -33,14 +33,43 @@ BEAKER_setfile=centos7-64 bundle exec rake beaker
 Other common environment variables:
 
 * `BEAKER_HYPERVISOR` defaults to `docker`, can be set to `vagrant_libvirt`
-* `BEAKER_destroy` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures
+* `BEAKER_destroy` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures. Another common value is `onpass` which deletes it only when the tests pass.
 * `BEAKER_provision` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_destroy`
+* `BEAKER_setfile` is used to point to a setfile containing definitions. To avoid storing large YAML files in all repositories, [beaker-hostgenerator](https://github.com/voxpupuli/beaker-hostgenerator) is used to generate them on the fly when the file is not present.
 
 Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
 
 ```bash
 BEAKER_setfile=centos7-64 bundle exec rspec spec/acceptance/my_test.rb
 ```
+
+## Hypervisors
+
+By default the Docker hypervisor is used. This can be changed with `BEAKER_HYPERVISOR`.
+
+### Docker
+
+The easiest way to debug in a [Docker](https://www.docker.com/) container is to open a shell:
+
+```sh
+docker exec -it -u root ${container_id_or_name} bash
+```
+
+### Vagrant
+
+To use [Vagrant](https://www.vagrantup.com/), use:
+
+```sh
+BEAKER_HYPERVISOR=vagrant
+```
+
+To use [vagrant-libvirt](https://github.com/vagrant-libvirt/vagrant-libvirt), use:
+
+```sh
+BEAKER_HYPERVISOR=vagrant_libvirt
+```
+
+The `Vagrantfile` for the created virtual machines will be in `.vagrant/beaker_vagrant_files`. From there you can use `vagrant ssh` as you normally would.
 
 # Customizing host configuration
 
