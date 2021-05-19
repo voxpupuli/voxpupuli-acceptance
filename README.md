@@ -157,3 +157,21 @@ This behavior can be disabled altogether:
 ```ruby
 configure_beaker(configure_facts_from_env: false)
 ```
+
+## Hiera
+
+In many acceptance tests it's useful to override some defaults. For example, `configure_repository` should default to false in the module but is always on in acceptance tests. Hiera is a good tool for this and using [beaker-hiera](https://github.com/voxpupuli/beaker-hiera) it's easy and on by default.
+
+To use this, create `spec/acceptance/hieradata` and use it as a regular Hiera data directory. It can be changed as follows. The defaults are shown:
+```ruby
+RSpec.configure do |c|
+  c.suite_hiera = true
+  c.suite_hiera_data_dir = File.join('spec', 'acceptance', 'hieradata')
+  c.suite_hiera_hierachy = [
+    'fqdn/%{fqdn}.yaml',
+    'os/%{os.family}/%{os.release.major}.yaml',
+    'os/%{os.family}.yaml',
+    'common.yaml',
+  ]
+end
+```

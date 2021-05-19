@@ -31,6 +31,9 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
   ENV['BEAKER_debug'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
+  # On Ruby 3 this doesn't appear to matter but on Ruby 2 beaker-hiera must be
+  # included before beaker-rspec so Beaker::DSL is final
+  require 'beaker-hiera'
   require 'beaker-rspec'
   require 'beaker-puppet'
   require 'beaker/puppet_install_helper'
@@ -62,6 +65,15 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
 
       write_beaker_facts_on(hosts) if configure_facts_from_env
 
+      if RSpec.configuration.suite_hiera?
+        hiera_data_dir = RSpec.configuration.suite_hiera_data_dir
+
+        if Dir.exist?(hiera_data_dir)
+          write_hiera_config_on(hosts, RSpec.configuration.suite_hiera_hierachy)
+          copy_hiera_data_to(hosts, hiera_data_dir)
+        end
+      end
+
       if block
         hosts.each do |host|
           yield host
@@ -69,4 +81,15 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
       end
     end
   end
+end
+
+RSpec.configure do |c|
+  c.add_setting :suite_hiera, default: true
+  c.add_setting :suite_hiera_data_dir, default: File.join('spec', 'acceptance', 'hieradata')
+  c.add_setting :suite_hiera_hierachy, default: [
+    'fqdn/%{fqdn}.yaml',
+    'os/%{os.family}/%{os.release.major}.yaml',
+    'os/%{os.family}.yaml',
+    'common.yaml',
+  ]
 end
