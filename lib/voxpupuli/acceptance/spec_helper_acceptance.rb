@@ -76,9 +76,15 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
         end
       end
 
-      if block
-        hosts.each do |host|
+      hosts.each do |host|
+        if block
           yield host
+
+          local_setup = RSpec.configuration.setup_acceptance_node
+          if local_setup && File.exist?(local_setup)
+            puts "Configuring #{host} by applying #{local_setup}"
+            apply_manifest_on(host, File.read(local_setup), catch_failures: true)
+          end
         end
       end
     end
@@ -86,6 +92,7 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
 end
 
 RSpec.configure do |c|
+  # Hiera settings
   c.add_setting :suite_hiera, default: true
   c.add_setting :suite_hiera_data_dir, default: File.join('spec', 'acceptance', 'hieradata')
   c.add_setting :suite_hiera_hierachy, default: [
@@ -94,4 +101,7 @@ RSpec.configure do |c|
     'os/%{os.family}.yaml',
     'common.yaml',
   ]
+
+  # Node setup
+  c.add_setting :setup_acceptance_node, default: File.join('spec', 'setup_acceptance_node.pp')
 end

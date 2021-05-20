@@ -75,6 +75,16 @@ The `Vagrantfile` for the created virtual machines will be in `.vagrant/beaker_v
 
 ## Per host configuration
 
+It is possible to use Puppet to set up an acceptance node. By default `spec/setup_acceptance_node.pp` is used if it exists. This can be changed. Use `false` to disable this behavior even if the file exists.
+
+```ruby
+RSpec.configure do |c|
+  c.setup_acceptance_node = File.join('spec', 'setup_acceptance_node.pp')
+end
+```
+
+This acceptance node setup script runs once per host once all other configuration is done.
+
 It is also possible to do per host configuration by providing a block:
 
 ```ruby
@@ -86,6 +96,8 @@ configure_beaker do |host|
   end
 end
 ```
+
+This block is executed after all host configuration is done except applying the acceptance node script.
 
 ## Installing Puppet Modules
 
