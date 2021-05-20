@@ -1,3 +1,5 @@
+require_relative 'examples'
+
 ENV_VAR_PREFIX = 'BEAKER_FACTER_'
 FACT_FILE = '/etc/facter/facts.d/voxpupuli-acceptance-env.json'
 

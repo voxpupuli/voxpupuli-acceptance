@@ -175,3 +175,35 @@ RSpec.configure do |c|
   ]
 end
 ```
+
+## Shared examples
+
+Some [RSpec shared examples](https://relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples) are shipped by default. These make it easier to write tests.
+
+### An idempotent resource
+
+Often you want to test some manifest is idempotent. This means applying a manifest and ensuring there are no failures. It then applies again and ensures no changes were made.
+
+```ruby
+describe 'myclass' do
+  it_behaves_like 'an idempotent resource' do
+    let(:manifest) do
+      <<-PUPPET
+      include myclass
+      PUPPET
+    end
+  end
+end
+```
+
+### Examples
+
+In modules there's the convention to have an examples directory. It's actually great to test these in acceptance. For this a shared example is available:
+
+```ruby
+describe 'my example' do
+  it_behaves_like 'the example', 'my_example.pp'
+end
+```
+
+For this `examples/my_example.pp' must exist and contain valid Puppet code. It then uses the idempotent resource shared example.
