@@ -24,7 +24,15 @@ configure_beaker
 
 # Running tests
 
-This module provides no rake helpers but leaves that to [puppetlabs_spec_helper](https://github.com/puppetlabs/puppetlabs_spec_helper). Commonly invoked as:
+This module provides rake helpers. It prefers [puppetlabs_spec_helper](https://github.com/puppetlabs/puppetlabs_spec_helper) but falls back to [beaker-rspec](https://github.com/voxpupuli/beaker-rspec). Commonly invoked as:
+
+To do so, in your `Rakefile`
+
+```ruby
+require 'voxpupuli/acceptance/rake'
+```
+
+It can then be invoked as:
 
 ```bash
 BEAKER_setfile=centos7-64 bundle exec rake beaker

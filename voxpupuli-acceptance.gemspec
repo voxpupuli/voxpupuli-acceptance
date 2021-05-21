@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'beaker-vagrant'
   s.add_runtime_dependency 'ed25519'
   s.add_runtime_dependency 'puppet-modulebuilder', '~> 0.1'
+  s.add_runtime_dependency 'rake'
   s.add_runtime_dependency 'rbnacl', '>= 4'
   s.add_runtime_dependency 'rbnacl-libsodium'
   s.add_runtime_dependency 'serverspec'
