@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version     = '0.3.0'
   s.authors     = ['Vox Pupuli']
   s.email       = ['pmc@voxpupuli.org']
-  s.homepage    = 'http://github.com/voxpupuli/voxpupuli-acceptance'
+  s.homepage    = 'https://github.com/voxpupuli/voxpupuli-acceptance'
   s.summary     = 'Helpers for acceptance testing Vox Pupuli modules'
   s.description = 'A package that depends on all the gems Vox Pupuli modules need and methods to simplify acceptance spec helpers'
   s.licenses    = 'Apache-2.0'
