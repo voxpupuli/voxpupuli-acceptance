@@ -73,3 +73,13 @@ jobs:
       - name: Run tests
         run: bundle exec rake beaker
         working-directory: examples/${{ matrix.example }}
+
+  post:
+    needs:
+      - unit
+      - acceptance
+    runs-on: ubuntu-latest
+    name: All tests
+    steps:
+      - name: Completion
+        run: echo "All tests completed successfully"
