@@ -1,0 +1,77 @@
+#!/bin/bash
+
+EXAMPLE=$1
+if [[ -z $EXAMPLE ]] ; then
+	echo "Usage: $0 EXAMPLE"
+	exit 1
+fi
+
+if [[ -e $EXAMPLE ]] ; then
+	echo "Example '$EXAMPLE' already exists"
+	exit 2
+fi
+
+mkdir $EXAMPLE
+
+cat > $EXAMPLE/Gemfile <<GEMFILE
+source 'https://rubygems.org'
+
+gem 'voxpupuli-acceptance', path: '../..'
+GEMFILE
+
+cat > $EXAMPLE/Rakefile <<RAKEFILE
+require 'voxpupuli/acceptance/rake'
+RAKEFILE
+
+cat > $EXAMPLE/metadata.json <<METADATA
+{
+  "name": "voxpupuli_acceptance_tests-${EXAMPLE}",
+  "version": "0.0.1",
+  "author": "Vox Pupuli",
+  "license": "Apache-2.0",
+  "summary": "The voxpupuli-acceptance test suite ${EXAMPLE}",
+  "description": "DESCRIBE THE TEST SUITE HERE",
+  "source": "https://github.com/voxpupuli/voxpupuli-acceptance",
+  "project_page": "https://github.com/voxpupuli/voxpupuli-acceptance",
+  "issues_url": "https://github.com/voxpupuli/voxpupuli-acceptance/issues",
+  "dependencies": [],
+  "requirements": [],
+  "operatingsystem_support": []
+}
+METADATA
+
+mkdir $EXAMPLE/manifests
+
+cat > $EXAMPLE/manifests/init.pp <<MANIFEST
+class $EXAMPLE {
+  file { "/voxpupuli-acceptance-test":
+    ensure  => 'file',
+    content => "Current test: \${module_name}\\n",
+  }
+}
+MANIFEST
+
+mkdir $EXAMPLE/spec
+
+cat > $EXAMPLE/spec/spec_helper_acceptance.rb <<SPEC_HELPER_ACCEPTANCE
+require 'voxpupuli/acceptance/spec_helper_acceptance'
+
+configure_beaker
+SPEC_HELPER_ACCEPTANCE
+
+mkdir $EXAMPLE/spec/acceptance
+
+cat > $EXAMPLE/spec/acceptance/basic_spec.rb <<SPEC
+require 'spec_helper_acceptance'
+
+describe 'Basic integration test' do
+  it_behaves_like 'an idempotent resource' do
+    let(:manifest) { 'include ${EXAMPLE}' }
+  end
+
+  describe file('/voxpupuli-acceptance-test') do
+    it { is_expected.to be_file }
+    its(:content) { is_expected.to eq("Current test: ${EXAMPLE}\\n") }
+  end
+end
+SPEC
