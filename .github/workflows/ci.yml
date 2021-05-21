@@ -4,7 +4,23 @@ on:
   - pull_request
 
 jobs:
+  pre:
+    runs-on: ubuntu-latest
+    outputs:
+      examples: ${{ steps.list_examples.outputs.examples }}
+    name: Pre
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - name: List examples
+        id: list_examples
+        run: .github/script/examples
+
   unit:
+    needs: pre
     runs-on: ubuntu-latest
     env:
       BUNDLE_WITHOUT: release
@@ -29,7 +45,9 @@ jobs:
         run: bundle exec rake spec
 
   acceptance:
-    needs: unit
+    needs:
+      - pre
+      - unit
     runs-on: ubuntu-latest
     env:
       BEAKER_setfile: debian10-64
@@ -42,10 +60,7 @@ jobs:
           - '2.6'
           - '2.7'
           - '3.0'
-        example:
-          - no_modules
-          - defaults_no_dependencies
-          - defaults_basic_dependency
+        example: ${{ fromJson(needs.pre.outputs.examples) }}
     name: Acceptance / Ruby ${{ matrix.ruby }} - ${{ matrix.example }}
     steps:
       - uses: actions/checkout@v2

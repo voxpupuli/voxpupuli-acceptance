@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+require 'json'
+require 'pathname'
+
+directory = ARGV[0] || 'examples'
+examples = Pathname.new(directory).children.select(&:directory?).map(&:basename)
+puts "::set-output name=examples::#{examples.to_json}"
