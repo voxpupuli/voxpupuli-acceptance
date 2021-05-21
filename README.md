@@ -175,7 +175,9 @@ If no environment variables are present, the file is removed. It is not possible
 This behavior can be disabled altogether:
 
 ```ruby
-configure_beaker(configure_facts_from_env: false)
+RSpec.configure do |c|
+  c.suite_configure_facts_from_env = false
+end
 ```
 
 ## Hiera
