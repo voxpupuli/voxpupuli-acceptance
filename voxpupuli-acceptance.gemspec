@@ -12,6 +12,8 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['lib/**/*.rb']
 
+  s.required_ruby_version = '>= 2.4', '< 4'
+
   # Testing
   s.add_runtime_dependency 'bcrypt_pbkdf'
   s.add_runtime_dependency 'beaker', '>= 4.2.0', '!= 4.22.0', '!= 4.23.0'
