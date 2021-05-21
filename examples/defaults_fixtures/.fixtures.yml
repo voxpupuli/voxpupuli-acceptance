@@ -1,0 +1,5 @@
+---
+fixtures:
+  symlinks:
+    defaults_no_dependencies: "../../../../defaults_no_dependencies"
+    defaults_fixtures: "../../.."

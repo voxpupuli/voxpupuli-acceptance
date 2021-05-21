@@ -1,0 +1,14 @@
+{
+  "name": "voxpupuli_acceptance_tests-defaults_fixtures",
+  "version": "0.0.1",
+  "author": "Vox Pupuli",
+  "license": "Apache-2.0",
+  "summary": "The voxpupuli-acceptance test suite to test modules via fixtures",
+  "description": "This uses puppet-modulebuilder to build modules using .fixtures.yml",
+  "source": "https://github.com/voxpupuli/voxpupuli-acceptance",
+  "project_page": "https://github.com/voxpupuli/voxpupuli-acceptance",
+  "issues_url": "https://github.com/voxpupuli/voxpupuli-acceptance/issues",
+  "dependencies": [],
+  "requirements": [],
+  "operatingsystem_support": []
+}

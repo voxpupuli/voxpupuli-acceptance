@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+gem 'voxpupuli-acceptance', path: '../..'
+gem 'puppetlabs_spec_helper'
