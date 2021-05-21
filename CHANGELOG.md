@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.0.0) (2021-05-21)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.3.0...1.0.0)
+
+**Implemented enhancements:**
+
+- Change fact handling into a setting [\#25](https://github.com/voxpupuli/voxpupuli-acceptance/pull/25) ([ekohl](https://github.com/ekohl))
+- Add a rake task [\#22](https://github.com/voxpupuli/voxpupuli-acceptance/pull/22) ([ekohl](https://github.com/ekohl))
+- Support a Puppet-based acceptance node setup script [\#21](https://github.com/voxpupuli/voxpupuli-acceptance/pull/21) ([ekohl](https://github.com/ekohl))
+- Add shared examples [\#20](https://github.com/voxpupuli/voxpupuli-acceptance/pull/20) ([ekohl](https://github.com/ekohl))
+- Add integration with beaker-hiera [\#19](https://github.com/voxpupuli/voxpupuli-acceptance/pull/19) ([ekohl](https://github.com/ekohl))
+
+**Fixed bugs:**
+
+- Correct namespace of Fixtures + add an example [\#24](https://github.com/voxpupuli/voxpupuli-acceptance/pull/24) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Add a test suite [\#23](https://github.com/voxpupuli/voxpupuli-acceptance/pull/23) ([ekohl](https://github.com/ekohl))
+- Use released github\_changelog\_generator [\#18](https://github.com/voxpupuli/voxpupuli-acceptance/pull/18) ([ekohl](https://github.com/ekohl))
+- Expand the documentation with hypervisors and links [\#17](https://github.com/voxpupuli/voxpupuli-acceptance/pull/17) ([ekohl](https://github.com/ekohl))
+- Convert to Github Actions [\#15](https://github.com/voxpupuli/voxpupuli-acceptance/pull/15) ([ekohl](https://github.com/ekohl))
+
 ## [0.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/0.3.0) (2020-10-09)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.2.1...0.3.0)
