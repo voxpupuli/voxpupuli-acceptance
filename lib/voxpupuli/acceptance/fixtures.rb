@@ -1,7 +1,7 @@
 require 'tmpdir'
 require 'puppet/modulebuilder'
 
-module Voxpupupli
+module Voxpupuli
   module Acceptance
     class Fixtures
       class << self

@@ -62,7 +62,7 @@ def configure_beaker(modules: :metadata, configure_facts_from_env: true, &block)
         install_module_dependencies
       when :fixtures
         fixture_modules = File.join(Dir.pwd, 'spec', 'fixtures', 'modules')
-        Voxpupupli::Acceptance::Fixtures.install_fixture_modules_on(hosts, fixture_modules)
+        Voxpupuli::Acceptance::Fixtures.install_fixture_modules_on(hosts, fixture_modules)
       end
 
       write_beaker_facts_on(hosts) if configure_facts_from_env
