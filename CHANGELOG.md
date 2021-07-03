@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.0.1) (2021-07-03)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.0.0...1.0.1)
+
+**Fixed bugs:**
+
+- Fix applying spec/setup\_acceptance\_node.erb [\#27](https://github.com/voxpupuli/voxpupuli-acceptance/pull/27) ([smortex](https://github.com/smortex))
+
 ## [1.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.0.0) (2021-05-21)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/0.3.0...1.0.0)
