@@ -1,27 +1,25 @@
 require_relative 'examples'
 
 def configure_beaker(modules: :metadata, &block)
-  ENV['PUPPET_INSTALL_TYPE'] ||= 'agent'
-  ENV['BEAKER_PUPPET_COLLECTION'] ||= 'puppet7'
+  collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'puppet'
   ENV['BEAKER_debug'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
   # On Ruby 3 this doesn't appear to matter but on Ruby 2 beaker-hiera must be
   # included before beaker-rspec so Beaker::DSL is final
   require 'beaker-hiera'
+  require 'beaker_puppet_helpers'
   require 'beaker-rspec'
-  require 'beaker-puppet'
-  require 'beaker/puppet_install_helper'
 
-  case modules
-  when :metadata
-    require 'beaker/module_install_helper'
-    $module_source_dir = get_module_source_directory caller
-  when :fixtures
-    require_relative 'fixtures'
+  require_relative 'fixtures' if modules == :fixtures
+
+  unless ENV['BEAKER_provision'] == 'no'
+    block_on hosts, run_in_parallel: true do |host|
+      BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection)
+      package_name = BeakerPuppetHelpers::InstallUtils.puppet_package_name(host)
+      host.install_package(package_name)
+    end
   end
-
-  run_puppet_install_helper unless ENV['BEAKER_provision'] == 'no'
 
   RSpec.configure do |c|
     # Readable test descriptions
@@ -31,8 +29,7 @@ def configure_beaker(modules: :metadata, &block)
     c.before :suite do
       case modules
       when :metadata
-        install_module
-        install_module_dependencies
+        install_local_module_on(hosts)
       when :fixtures
         fixture_modules = File.join(Dir.pwd, 'spec', 'fixtures', 'modules')
         Voxpupuli::Acceptance::Fixtures.install_fixture_modules_on(hosts, fixture_modules)
