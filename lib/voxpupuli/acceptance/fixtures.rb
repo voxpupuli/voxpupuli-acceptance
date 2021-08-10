@@ -85,7 +85,7 @@ module Voxpupuli
                 logger.debug("Copying module #{name} from #{source_path} to #{target_file}") if logger
 
                 scp_to(host, source_path, target_file)
-                on host, puppet("module install --force --ignore-dependencies '#{target_file}'")
+                on host, "puppet module install --force --ignore-dependencies '#{target_file}'"
               end
             end
           end
