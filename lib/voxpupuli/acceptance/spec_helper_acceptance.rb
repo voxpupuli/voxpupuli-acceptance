@@ -56,12 +56,13 @@ def configure_beaker(modules: :metadata, &block)
       end
 
       local_setup = RSpec.configuration.setup_acceptance_node
+      local_setup_content = File.exist?(local_setup) ? File.read(local_setup) : nil
       hosts.each do |host|
         yield host if block
 
-        if local_setup && File.exist?(local_setup)
+        if local_setup_content
           puts "Configuring #{host} by applying #{local_setup}"
-          apply_manifest_on(host, File.read(local_setup), catch_failures: true)
+          apply_manifest_on(host, local_setup_content, catch_failures: true)
         end
       end
     end
