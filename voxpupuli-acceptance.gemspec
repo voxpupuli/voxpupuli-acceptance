@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   # Testing
   s.add_runtime_dependency 'bcrypt_pbkdf'
-  s.add_runtime_dependency 'beaker', '>= 4.2.0', '!= 4.22.0', '!= 4.23.0'
+  s.add_runtime_dependency 'beaker', '>= 4.33.0'
   s.add_runtime_dependency 'beaker-docker'
   s.add_runtime_dependency 'beaker-hiera', '~> 0.4'
   s.add_runtime_dependency 'beaker-hostgenerator', '>= 1.1.22'
@@ -25,11 +25,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'beaker-puppet_install_helper'
   s.add_runtime_dependency 'beaker-rspec'
   s.add_runtime_dependency 'beaker-vagrant'
-  s.add_runtime_dependency 'ed25519'
   s.add_runtime_dependency 'puppet-modulebuilder', '~> 0.1'
   s.add_runtime_dependency 'rake'
-  s.add_runtime_dependency 'rbnacl', '>= 4'
-  s.add_runtime_dependency 'rbnacl-libsodium'
   s.add_runtime_dependency 'serverspec'
   s.add_runtime_dependency 'winrm'
   s.add_development_dependency 'puppetlabs_spec_helper', '>= 1.2.0'
