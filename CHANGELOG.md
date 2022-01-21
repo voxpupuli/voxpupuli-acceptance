@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.1.0) (2022-01-21)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.0.1...1.1.0)
+
+**Implemented enhancements:**
+
+- cleanup dependencies; depend on beaker \>= 4.33.0 [\#35](https://github.com/voxpupuli/voxpupuli-acceptance/pull/35) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Add puppetlabs\_spec\_helper 4 compatibility [\#34](https://github.com/voxpupuli/voxpupuli-acceptance/pull/34) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- cleanup release CI job; publish to github packages [\#36](https://github.com/voxpupuli/voxpupuli-acceptance/pull/36) ([bastelfreak](https://github.com/bastelfreak))
+- Document vagrant beaker backend [\#33](https://github.com/voxpupuli/voxpupuli-acceptance/pull/33) ([bastelfreak](https://github.com/bastelfreak))
+- Add Ruby 3.1 to CI matrix [\#32](https://github.com/voxpupuli/voxpupuli-acceptance/pull/32) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [1.0.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.0.1) (2021-07-03)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.0.0...1.0.1)
