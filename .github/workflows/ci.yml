@@ -33,6 +33,7 @@ jobs:
           - '2.6'
           - '2.7'
           - '3.0'
+          - '3.1'
     name: Unit / Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v2
@@ -60,6 +61,7 @@ jobs:
           - '2.6'
           - '2.7'
           - '3.0'
+          - '3.1'
         example: ${{ fromJson(needs.pre.outputs.examples) }}
     name: Acceptance / Ruby ${{ matrix.ruby }} - ${{ matrix.example }}
     steps:
