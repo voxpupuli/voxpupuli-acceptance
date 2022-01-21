@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rbnacl-libsodium'
   s.add_runtime_dependency 'serverspec'
   s.add_runtime_dependency 'winrm'
+  s.add_development_dependency 'puppetlabs_spec_helper', '>= 1.2.0'
 end
