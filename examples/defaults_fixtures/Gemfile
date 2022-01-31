@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
+# TODO: pending a release
+gem 'beaker_puppet_helpers', github: 'voxpupuli/beaker_puppet_helpers'
+
 gem 'voxpupuli-acceptance', path: '../..'
 gem 'puppetlabs_spec_helper'
