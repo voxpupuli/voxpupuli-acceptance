@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'beaker-vagrant'
   s.add_runtime_dependency 'puppet-modulebuilder', '~> 0.1'
   s.add_runtime_dependency 'rake'
+  s.add_runtime_dependency 'rspec-github', '~> 2.0'
   s.add_runtime_dependency 'serverspec'
   s.add_runtime_dependency 'winrm'
   s.add_development_dependency 'puppetlabs_spec_helper', '>= 1.2.0'

@@ -66,6 +66,10 @@ def configure_beaker(modules: :metadata, &block)
 end
 
 RSpec.configure do |c|
+  if ENV['GITHUB_ACTIONS'] == 'true'
+    c.formatter = 'RSpec::Github::Formatter'
+  end
+
   # Fact handling
   c.add_setting :suite_configure_facts_from_env, default: true
 
