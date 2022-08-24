@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.2.0) (2022-08-24)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.1.0...1.2.0)
+
+**Implemented enhancements:**
+
+- Add a GitHub Action formatter to rspec [\#38](https://github.com/voxpupuli/voxpupuli-acceptance/pull/38) ([ekohl](https://github.com/ekohl))
+
 ## [1.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.1.0) (2022-01-21)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.0.1...1.1.0)
