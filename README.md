@@ -42,7 +42,6 @@ Other common environment variables:
 
 * `BEAKER_HYPERVISOR` defaults to `docker`, can be set to `vagrant_libvirt` or `vagrant` (using [VirtualBox](https://www.virtualbox.org/))
 * `BEAKER_destroy` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures. Another common value is `onpass` which deletes it only when the tests pass.
-* `BEAKER_provision` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_destroy`
 * `BEAKER_setfile` is used to point to a setfile containing definitions. To avoid storing large YAML files in all repositories, [beaker-hostgenerator](https://github.com/voxpupuli/beaker-hostgenerator) is used to generate them on the fly when the file is not present.
 
 Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
