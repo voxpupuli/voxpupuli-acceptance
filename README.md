@@ -38,6 +38,23 @@ It can then be invoked as:
 BEAKER_setfile=centos7-64 bundle exec rake beaker
 ```
 
+Known working setfiles (2023-01-06) :
+
+* ubuntu1604-64
+* ubuntu1804-64
+* ubuntu2004-64
+* ubuntu2204-64
+* debian9-64
+* debian10-64
+* debian11-64
+* centos7-64
+* centos8-64 (that's actually CentOS stream)
+* centos9-64 (that's CentOS stream as well)
+* almalinux8-64
+* almalinux9-64
+* rocky8-64
+* rocky9-64
+
 Other common environment variables:
 
 * `BEAKER_HYPERVISOR` defaults to `docker`, can be set to `vagrant_libvirt` or `vagrant` (using [VirtualBox](https://www.virtualbox.org/))
