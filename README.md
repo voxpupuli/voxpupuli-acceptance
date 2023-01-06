@@ -39,6 +39,9 @@ It can then be invoked as:
 BEAKER_SETFILE=centos7-64 bundle exec rake beaker
 ```
 
+To list all known setfiles, you can run `bundle exec setfiles`.
+That command is provided by [puppet_metadata](https://github.com/voxpupuli/puppet_metadata/blob/master/bin/setfiles), it will parse the local metadata.json and generate a list of supported setfiles based on the supported operating systems in the module.
+
 Other common environment variables:
 
 * `BEAKER_HYPERVISOR` defaults to `docker`, can be set to `vagrant_libvirt` or `vagrant` (using [VirtualBox](https://www.virtualbox.org/))
