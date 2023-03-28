@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.2.1) (2023-03-28)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.2.0...1.2.1)
+
+**Fixed bugs:**
+
+- Restrict to Beaker 4 [\#46](https://github.com/voxpupuli/voxpupuli-acceptance/pull/46) ([smortex](https://github.com/smortex))
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 2 to 3 [\#45](https://github.com/voxpupuli/voxpupuli-acceptance/pull/45) ([dependabot[bot]](https://github.com/apps/dependabot))
+- dependabot: check for github actions and gems [\#44](https://github.com/voxpupuli/voxpupuli-acceptance/pull/44) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs\_spec\_helper: require 4.x and newer [\#41](https://github.com/voxpupuli/voxpupuli-acceptance/pull/41) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [1.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.2.0) (2022-08-24)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.1.0...1.2.0)
