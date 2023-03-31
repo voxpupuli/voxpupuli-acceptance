@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   # Testing
   s.add_runtime_dependency 'bcrypt_pbkdf'
-  s.add_runtime_dependency 'beaker', '~> 4.33'
+  s.add_runtime_dependency 'beaker', '>= 4.33', '< 6'
   s.add_runtime_dependency 'beaker-docker'
   s.add_runtime_dependency 'beaker-hiera', '~> 0.4'
   s.add_runtime_dependency 'beaker-hostgenerator', '>= 1.1.22'
