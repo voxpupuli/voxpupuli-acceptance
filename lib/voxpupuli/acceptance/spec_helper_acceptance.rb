@@ -2,7 +2,7 @@ require_relative 'examples'
 
 def configure_beaker(modules: :metadata, &block)
   ENV['PUPPET_INSTALL_TYPE'] ||= 'agent'
-  ENV['BEAKER_PUPPET_COLLECTION'] ||= 'puppet6'
+  ENV['BEAKER_PUPPET_COLLECTION'] ||= 'puppet7'
   ENV['BEAKER_debug'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
