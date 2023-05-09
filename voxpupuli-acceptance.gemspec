@@ -16,13 +16,11 @@ Gem::Specification.new do |s|
 
   # Testing
   s.add_runtime_dependency 'bcrypt_pbkdf'
-  s.add_runtime_dependency 'beaker', '~> 4.33'
+  s.add_runtime_dependency 'beaker', '>= 4.33', '< 6'
   s.add_runtime_dependency 'beaker-docker'
   s.add_runtime_dependency 'beaker-hiera', '~> 0.4'
   s.add_runtime_dependency 'beaker-hostgenerator', '>= 1.1.22'
-  s.add_runtime_dependency 'beaker-module_install_helper'
-  s.add_runtime_dependency 'beaker-puppet'
-  s.add_runtime_dependency 'beaker-puppet_install_helper'
+  s.add_runtime_dependency 'beaker_puppet_helpers', '~> 1.0'
   s.add_runtime_dependency 'beaker-rspec'
   s.add_runtime_dependency 'beaker-vagrant'
   s.add_runtime_dependency 'puppet-modulebuilder', '~> 0.1'
