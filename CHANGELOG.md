@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.0.0) (2023-05-10)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.2.1...2.0.0)
+
+**Breaking changes:**
+
+- Drop puppet install helper [\#54](https://github.com/voxpupuli/voxpupuli-acceptance/pull/54) ([bastelfreak](https://github.com/bastelfreak))
+- Drop Ruby 2.4/2.5/2.6 support [\#53](https://github.com/voxpupuli/voxpupuli-acceptance/pull/53) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- Add Ruby 3.2 support [\#55](https://github.com/voxpupuli/voxpupuli-acceptance/pull/55) ([bastelfreak](https://github.com/bastelfreak))
+- BEAKER\_PUPPET\_COLLECTION: Default to puppet 7 [\#50](https://github.com/voxpupuli/voxpupuli-acceptance/pull/50) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- CI: Build gems with strictness and verbosity & gemspec: Add version constraints for dependencies [\#52](https://github.com/voxpupuli/voxpupuli-acceptance/pull/52) ([bastelfreak](https://github.com/bastelfreak))
+- GCG: Add faraday-retry dep [\#51](https://github.com/voxpupuli/voxpupuli-acceptance/pull/51) ([bastelfreak](https://github.com/bastelfreak))
+- Rename example modules to be valid on the forge [\#48](https://github.com/voxpupuli/voxpupuli-acceptance/pull/48) ([ekohl](https://github.com/ekohl))
+
 ## [1.2.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/1.2.1) (2023-03-28)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.2.0...1.2.1)
