@@ -36,7 +36,7 @@ require 'voxpupuli/acceptance/rake'
 It can then be invoked as:
 
 ```bash
-BEAKER_setfile=centos7-64 bundle exec rake beaker
+BEAKER_SETFILE=centos7-64 bundle exec rake beaker
 ```
 
 Other common environment variables:

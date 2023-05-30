@@ -2,7 +2,7 @@ require_relative 'examples'
 
 def configure_beaker(modules: :metadata, &block)
   collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'puppet'
-  ENV['BEAKER_debug'] ||= 'true'
+  ENV['BEAKER_DEBUG'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
   # On Ruby 3 this doesn't appear to matter but on Ruby 2 beaker-hiera must be
@@ -13,7 +13,7 @@ def configure_beaker(modules: :metadata, &block)
 
   require_relative 'fixtures' if modules == :fixtures
 
-  unless ENV['BEAKER_provision'] == 'no'
+  unless ENV['BEAKER_PROVISION'] == 'no'
     block_on hosts, run_in_parallel: true do |host|
       BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection) unless collection == 'none'
       package_name = BeakerPuppetHelpers::InstallUtils.puppet_package_name(host)
