@@ -1,9 +1,10 @@
 # Voxpupuli Acceptance Gem
 
-[![Build Status](https://img.shields.io/travis/voxpupuli/voxpupuli-acceptance/master.svg?style=flat-square)](https://travis-ci.org/voxpupuli/voxpupuli-acceptance)
 [![License](https://img.shields.io/github/license/voxpupuli/voxpupuli-acceptance.svg)](https://github.com/voxpupuli/voxpupuli-acceptance/blob/master/LICENSE)
-[![Gem Version](https://img.shields.io/gem/v/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
-[![Gem Downloads](https://img.shields.io/gem/dt/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
+[![Test](https://github.com/voxpupuli/voxpupuli-acceptance/actions/workflows/ci.yml/badge.svg)](https://github.com/voxpupuli/voxpupuli-acceptance/actions/workflows/ci.yml)
+[![Release](https://github.com/voxpupuli/voxpupuli-acceptance/actions/workflows/release.yml/badge.svg)](https://github.com/voxpupuli/voxpupuli-acceptance/actions/workflows/release.yml)
+[![RubyGem Version](https://img.shields.io/gem/v/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
+[![RubyGem Downloads](https://img.shields.io/gem/dt/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
 
 This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules using [beaker](https://github.com/voxpupuli/beaker). This Gem provides common functionality for all beaker based acceptance testing. The aim is to reduce the boiler plate and need for modulesync.
 
