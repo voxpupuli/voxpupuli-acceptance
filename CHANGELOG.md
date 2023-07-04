@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.1.0) (2023-07-04)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.0.0...2.1.0)
+
+**Implemented enhancements:**
+
+- Configure Puppet repo unless BEAKER\_PUPPET\_COLLECTION=none [\#62](https://github.com/voxpupuli/voxpupuli-acceptance/pull/62) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- README.md: adjust badges to Vox Pupuli defaults [\#61](https://github.com/voxpupuli/voxpupuli-acceptance/pull/61) ([bastelfreak](https://github.com/bastelfreak))
+- CI: Run on PRs+merges to master [\#60](https://github.com/voxpupuli/voxpupuli-acceptance/pull/60) ([bastelfreak](https://github.com/bastelfreak))
+- README.md: Switch beaker env vars to uppercase [\#58](https://github.com/voxpupuli/voxpupuli-acceptance/pull/58) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [2.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.0.0) (2023-05-10)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/1.2.1...2.0.0)
