@@ -15,9 +15,13 @@ def configure_beaker(modules: :metadata, &block)
 
   unless ENV['BEAKER_provision'] == 'no'
     block_on hosts, run_in_parallel: true do |host|
-      BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection)
+      BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection) unless collection == 'none'
       package_name = BeakerPuppetHelpers::InstallUtils.puppet_package_name(host)
       host.install_package(package_name)
+
+      # by default, puppet-agent creates /etc/profile.d/puppet-agent.sh which adds /opt/puppetlabs/bin to PATH
+      # in our non-interactive ssh sessions we manipulate PATH in ~/.ssh/environment, we need to do this step here as well
+      host.add_env_var('PATH', '/opt/puppetlabs/bin')
     end
   end
 
