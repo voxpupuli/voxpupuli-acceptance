@@ -202,7 +202,7 @@ end
 
 ## Shared examples
 
-Some [RSpec shared examples](https://relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples) are shipped by default. These make it easier to write tests.
+Some [RSpec shared examples](https://rspec.info/features/3-12/rspec-core/example-groups/shared-examples/) are shipped by default. These make it easier to write tests.
 
 ### An idempotent resource
 
