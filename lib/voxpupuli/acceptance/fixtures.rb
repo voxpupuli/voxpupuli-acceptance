@@ -93,7 +93,7 @@ module Voxpupuli
           nil
         end
 
-        # Create a temporay directory on the host, similar to Dir.mktmpdir but
+        # Create a temporary directory on the host, similar to Dir.mktmpdir but
         # on a remote host.
         #
         # @example
