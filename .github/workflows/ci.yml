@@ -55,7 +55,7 @@ jobs:
       - unit
     runs-on: ubuntu-latest
     env:
-      BEAKER_setfile: debian10-64
+      BEAKER_SETFILE: debian10-64
     strategy:
       fail-fast: false
       matrix:
