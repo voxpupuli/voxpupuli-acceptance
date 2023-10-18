@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.2.0) (2023-10-18)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.1.0...2.2.0)
+
+**Implemented enhancements:**
+
+- Pass AIO preference to package name selection [\#70](https://github.com/voxpupuli/voxpupuli-acceptance/pull/70) ([ekohl](https://github.com/ekohl))
+- Switch from mixed case to uppercase env vars [\#59](https://github.com/voxpupuli/voxpupuli-acceptance/pull/59) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- rake.rb: fix typo in comment [\#67](https://github.com/voxpupuli/voxpupuli-acceptance/pull/67) ([kenyon](https://github.com/kenyon))
+- fixtures.rb: fix typo in comment [\#66](https://github.com/voxpupuli/voxpupuli-acceptance/pull/66) ([kenyon](https://github.com/kenyon))
+- README.md: fix link to rspec shared examples docs [\#65](https://github.com/voxpupuli/voxpupuli-acceptance/pull/65) ([kenyon](https://github.com/kenyon))
+
 ## [2.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.1.0) (2023-07-04)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.0.0...2.1.0)
@@ -46,7 +61,6 @@ All notable changes to this project will be documented in this file.
 
 **Merged pull requests:**
 
-- Bump actions/checkout from 2 to 3 [\#45](https://github.com/voxpupuli/voxpupuli-acceptance/pull/45) ([dependabot[bot]](https://github.com/apps/dependabot))
 - dependabot: check for github actions and gems [\#44](https://github.com/voxpupuli/voxpupuli-acceptance/pull/44) ([bastelfreak](https://github.com/bastelfreak))
 - puppetlabs\_spec\_helper: require 4.x and newer [\#41](https://github.com/voxpupuli/voxpupuli-acceptance/pull/41) ([bastelfreak](https://github.com/bastelfreak))
 
