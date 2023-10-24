@@ -45,7 +45,7 @@ Other common environment variables:
 * `BEAKER_DESTROY` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures. Another common value is `onpass` which deletes it only when the tests pass.
 * `BEAKER_PROVISION` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_DESTROY`
 * `BEAKER_SETFILE` is used to point to a setfile containing definitions. To avoid storing large YAML files in all repositories, [beaker-hostgenerator](https://github.com/voxpupuli/beaker-hostgenerator) is used to generate them on the fly when the file is not present.
-* `BEAKER_PUPPET_COLLECTION` defines the puppet collection that will be configured, defaults to `puppet`. When set to `none`, no repository will be configured.
+* `BEAKER_PUPPET_COLLECTION` defines the puppet collection that will be configured, defaults to `puppet`. When set to `none`, no repository will be configured and distro package naming is assumed. When set to `preinstalled`, it assumes the OS is already set up with a collection but it still ensures `puppet-agent` is installed.
 
 Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
 
