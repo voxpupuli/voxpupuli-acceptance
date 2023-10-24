@@ -46,6 +46,7 @@ Other common environment variables:
 * `BEAKER_PROVISION` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_DESTROY`
 * `BEAKER_SETFILE` is used to point to a setfile containing definitions. To avoid storing large YAML files in all repositories, [beaker-hostgenerator](https://github.com/voxpupuli/beaker-hostgenerator) is used to generate them on the fly when the file is not present.
 * `BEAKER_PUPPET_COLLECTION` defines the puppet collection that will be configured, defaults to `puppet`. When set to `none`, no repository will be configured and distro package naming is assumed. When set to `preinstalled`, it assumes the OS is already set up with a collection but it still ensures `puppet-agent` is installed.
+* `BEAKER_PUPPET_PACKAGE_NAME` optional env var to set the puppet agent package name. If not set, the package name will be determined using [puppet_metadata](https://github.com/voxpupuli/puppet_metadata#puppet_metadata).
 
 Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
 
