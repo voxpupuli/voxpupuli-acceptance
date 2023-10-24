@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.3.0) (2023-10-24)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.2.0...2.3.0)
+
+**Implemented enhancements:**
+
+- Support the preinstalled BEAKER\_PUPPET\_COLLECTION [\#72](https://github.com/voxpupuli/voxpupuli-acceptance/pull/72) ([ekohl](https://github.com/ekohl))
+- Add env var for puppet package name [\#71](https://github.com/voxpupuli/voxpupuli-acceptance/pull/71) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [2.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.2.0) (2023-10-18)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.1.0...2.2.0)
