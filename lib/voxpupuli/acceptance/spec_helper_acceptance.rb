@@ -80,7 +80,7 @@ RSpec.configure do |c|
   c.add_setting :suite_hiera, default: true
   c.add_setting :suite_hiera_data_dir, default: File.join('spec', 'acceptance', 'hieradata')
   c.add_setting :suite_hiera_hierachy, default: [
-    'fqdn/%{fqdn}.yaml',
+    'fqdn/%{networking.fqdn}.yaml',
     'os/%{os.family}/%{os.release.major}.yaml',
     'os/%{os.family}.yaml',
     'common.yaml',
