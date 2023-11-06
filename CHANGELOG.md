@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.4.0) (2023-11-06)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.3.0...2.4.0)
+
+**Implemented enhancements:**
+
+- Avoid using legacy facts with beaker-hiera [\#74](https://github.com/voxpupuli/voxpupuli-acceptance/pull/74) ([ekohl](https://github.com/ekohl))
+- Only read the local\_setup file once [\#30](https://github.com/voxpupuli/voxpupuli-acceptance/pull/30) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Document known issue with BEAKER\_PROVISION & beaker-docker [\#76](https://github.com/voxpupuli/voxpupuli-acceptance/pull/76) ([ekohl](https://github.com/ekohl))
+
 ## [2.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.3.0) (2023-10-24)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.2.0...2.3.0)
