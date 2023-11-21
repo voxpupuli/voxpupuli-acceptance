@@ -193,10 +193,22 @@ RSpec.configure do |c|
   c.suite_hiera = true
   c.suite_hiera_data_dir = File.join('spec', 'acceptance', 'hieradata')
   c.suite_hiera_hierachy = [
-    'fqdn/%{fqdn}.yaml',
-    'os/%{os.family}/%{os.release.major}.yaml',
-    'os/%{os.family}.yaml',
-    'common.yaml',
+    {
+      name: "Per-node data",
+      path: 'fqdn/%{facts.networking.fqdn}.yaml',
+    },
+    {
+      name: 'OS family version data',
+      path: 'family/%{facts.os.family}/%{facts.os.release.major}.yaml',
+    },
+    {
+      name: 'OS family data',
+      path: 'family/%{facts.os.family}.yaml',
+    },
+    {
+      name: 'Common data',
+      path: 'common.yaml',
+    },
   ]
 end
 ```

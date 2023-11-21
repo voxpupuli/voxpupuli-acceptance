@@ -81,10 +81,22 @@ RSpec.configure do |c|
   c.add_setting :suite_hiera, default: true
   c.add_setting :suite_hiera_data_dir, default: File.join('spec', 'acceptance', 'hieradata')
   c.add_setting :suite_hiera_hierachy, default: [
-    'fqdn/%{networking.fqdn}.yaml',
-    'os/%{os.family}/%{os.release.major}.yaml',
-    'os/%{os.family}.yaml',
-    'common.yaml',
+    {
+      name: "Per-node data",
+      path: 'fqdn/%{facts.networking.fqdn}.yaml',
+    },
+    {
+      name: 'OS family version data',
+      path: 'family/%{facts.os.family}/%{facts.os.release.major}.yaml',
+    },
+    {
+      name: 'OS family data',
+      path: 'family/%{facts.os.family}.yaml',
+    },
+    {
+      name: 'Common data',
+      path: 'common.yaml',
+    },
   ]
 
   # Node setup
