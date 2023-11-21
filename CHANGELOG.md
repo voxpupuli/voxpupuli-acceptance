@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.0.0) (2023-11-21)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.4.0...3.0.0)
+
+**Breaking changes:**
+
+- Use beaker-hiera 1.x with hiera.yaml version 5 [\#75](https://github.com/voxpupuli/voxpupuli-acceptance/pull/75) ([ekohl](https://github.com/ekohl))
+
 ## [2.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/2.4.0) (2023-11-06)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.3.0...2.4.0)
