@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.1.0) (2024-05-02)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.0.0...3.1.0)
+
+**Implemented enhancements:**
+
+- Require beaker\_puppet\_helpers 1.3+ for bolt\_supported? [\#79](https://github.com/voxpupuli/voxpupuli-acceptance/pull/79) ([ekohl](https://github.com/ekohl))
+
 ## [3.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.0.0) (2023-11-21)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/2.4.0...3.0.0)
