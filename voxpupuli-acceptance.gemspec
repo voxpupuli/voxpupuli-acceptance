@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'beaker-docker', '~> 2.1'
   s.add_runtime_dependency 'beaker-hiera', '~> 1.0'
   s.add_runtime_dependency 'beaker-hostgenerator', '~> 2.2'
-  s.add_runtime_dependency 'beaker_puppet_helpers', '~> 1.0'
+  s.add_runtime_dependency 'beaker_puppet_helpers', '~> 1.3'
   s.add_runtime_dependency 'beaker-rspec', '~> 8.0', '>= 8.0.1'
   s.add_runtime_dependency 'beaker-vagrant', '~> 1.2'
   s.add_runtime_dependency 'puppet-modulebuilder', '~> 1.0'
