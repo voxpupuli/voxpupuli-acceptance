@@ -20,7 +20,7 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.3'
       - name: List examples
         id: list_examples
         run: .github/script/examples
@@ -32,6 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
+          - '3.3'
           - '3.2'
           - '3.1'
           - '3.0'
@@ -60,6 +61,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby:
+          - '3.3'
           - '3.2'
           - '3.1'
           - '3.0'
