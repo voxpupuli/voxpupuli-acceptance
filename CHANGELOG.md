@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.2.0) (2024-05-29)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.1.0...3.2.0)
+
+**Implemented enhancements:**
+
+- Add Ruby 3.3 to CI matrix [\#82](https://github.com/voxpupuli/voxpupuli-acceptance/pull/82) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs\_spec\_helper: Allow 7.x [\#81](https://github.com/voxpupuli/voxpupuli-acceptance/pull/81) ([bastelfreak](https://github.com/bastelfreak))
+- Require beaker 6.x [\#80](https://github.com/voxpupuli/voxpupuli-acceptance/pull/80) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.1.0) (2024-05-02)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.0.0...3.1.0)
