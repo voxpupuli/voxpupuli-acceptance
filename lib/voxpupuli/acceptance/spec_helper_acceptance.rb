@@ -4,6 +4,10 @@ def configure_beaker(modules: :metadata, &block)
   collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'puppet'
   ENV['BEAKER_DEBUG'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
+  # ensure all vagrant instances have 2G memory and 2 cores
+  # beaker-vagrant expects strings, not integers
+  ENV['BEAKER_VAGRANT_MEMSIZE'] ||= '2028'
+  ENV['BEAKER_VAGRANT_CPUS'] ||= '2'
 
   # On Ruby 3 this doesn't appear to matter but on Ruby 2 beaker-hiera must be
   # included before beaker-rspec so Beaker::DSL is final
