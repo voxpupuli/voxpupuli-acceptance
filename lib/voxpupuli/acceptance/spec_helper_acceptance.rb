@@ -39,6 +39,8 @@ def configure_beaker(modules: :metadata, &block)
       when :fixtures
         fixture_modules = File.join(Dir.pwd, 'spec', 'fixtures', 'modules')
         Voxpupuli::Acceptance::Fixtures.install_fixture_modules_on(hosts, fixture_modules)
+      when :rsync
+        install_puppet_modules_via_rsync(hosts)
       end
 
       if RSpec.configuration.suite_configure_facts_from_env
