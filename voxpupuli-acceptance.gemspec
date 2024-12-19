@@ -23,10 +23,10 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'beaker_puppet_helpers', '~> 1.3'
   s.add_runtime_dependency 'beaker-rspec', '~> 8.0', '>= 8.0.1'
   s.add_runtime_dependency 'beaker-vagrant', '~> 1.2'
-  s.add_runtime_dependency 'puppet-modulebuilder', '~> 1.0'
+  s.add_runtime_dependency 'puppet-modulebuilder', '~> 2.0', '>= 2.0.2'
   s.add_runtime_dependency 'rake', '~> 13.0', '>= 13.0.6'
   s.add_runtime_dependency 'rspec-github', '~> 2.0'
   s.add_runtime_dependency 'serverspec', '~> 2.42', '>= 2.42.2'
   s.add_runtime_dependency 'winrm', '~> 2.3', '>= 2.3.6'
-  s.add_development_dependency 'puppetlabs_spec_helper', '>= 4.0.0', '< 8'
+  s.add_development_dependency 'puppetlabs_spec_helper', '>= 4.0.0', '< 9'
 end
