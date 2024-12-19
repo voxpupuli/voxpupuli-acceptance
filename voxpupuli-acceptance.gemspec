@@ -28,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rspec-github', '~> 2.0'
   s.add_runtime_dependency 'serverspec', '~> 2.42', '>= 2.42.2'
   s.add_runtime_dependency 'winrm', '~> 2.3', '>= 2.3.6'
-  s.add_development_dependency 'puppetlabs_spec_helper', '>= 4.0.0', '< 8'
+  s.add_development_dependency 'puppetlabs_spec_helper', '>= 4.0.0', '< 9'
 end
