@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.3.0) (2024-12-19)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.2.0...3.3.0)
+
+**Implemented enhancements:**
+
+- puppet-modulebuilder: Require 2.x [\#87](https://github.com/voxpupuli/voxpupuli-acceptance/pull/87) ([bastelfreak](https://github.com/bastelfreak))
+- Document how to list setfiles [\#42](https://github.com/voxpupuli/voxpupuli-acceptance/pull/42) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.2.0) (2024-05-29)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.1.0...3.2.0)
