@@ -1,4 +1,5 @@
 require_relative 'examples'
+require_relative 'serverspec_extensions'
 
 def configure_beaker(modules: :metadata, &block)
   collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'puppet'
