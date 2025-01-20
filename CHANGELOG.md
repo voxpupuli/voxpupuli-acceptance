@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.4.0) (2025-01-20)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.3.0...3.4.0)
+
+**Implemented enhancements:**
+
+- add curl\_command as serverspec extension [\#89](https://github.com/voxpupuli/voxpupuli-acceptance/pull/89) ([evgeni](https://github.com/evgeni))
+
 ## [3.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.3.0) (2024-12-19)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.2.0...3.3.0)
