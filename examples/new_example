@@ -25,7 +25,7 @@ RAKEFILE
 
 cat > $EXAMPLE/metadata.json <<METADATA
 {
-  "name": "voxpupuli_acceptance_tests-${EXAMPLE}",
+  "name": "voxpupuliacceptancetests-${EXAMPLE}",
   "version": "0.0.1",
   "author": "Vox Pupuli",
   "license": "Apache-2.0",

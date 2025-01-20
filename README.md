@@ -246,4 +246,25 @@ describe 'my example' do
 end
 ```
 
-For this `examples/my_example.pp' must exist and contain valid Puppet code. It then uses the idempotent resource shared example.
+For this `examples/my_example.pp` must exist and contain valid Puppet code. It then uses the idempotent resource shared example.
+
+## Serverspec extensions
+
+Some [Serverspec](https://serverspec.org/) extensions are shipped and enabled by default. These make it easier to write tests but were not accepted by Serverspec upstream.
+
+### `curl_command`
+
+Often you want to test some service that exposes things over HTTP.
+Instead of using [`command("curl …")`](https://serverspec.org/resource_types.html#command) you can use `curl_command(…)` which behaves like a Serverspec `command` but adds matchers for the HTTP response code and the response body.
+
+```ruby
+describe curl_command("http://localhost:8080/api/ping") do
+  its(:response_code) { is_expected.to eq(200) }
+  its(:exit_status) { is_expected.to eq 0 }
+end
+
+describe curl_command('http://localhost:8080/api/status', headers: { 'Accept' => 'application/json' }) do
+  its(:response_code) { is_expected.to eq(200) }
+  its(:body_as_json) { is_expected.to eq({'status': 'ok'}) }
+end
+```
