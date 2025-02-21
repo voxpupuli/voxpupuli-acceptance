@@ -21,9 +21,9 @@ def configure_beaker(modules: :metadata, &block)
       unless %w[none preinstalled].include?(collection)
         BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection)
       end
-      package_name = ENV.fetch('BEAKER_PUPPET_PACKAGE_NAME',
-                               BeakerPuppetHelpers::InstallUtils.puppet_package_name(host,
-                                                                                     prefer_aio: collection != 'none'))
+      package_name = ENV.fetch('BEAKER_PUPPET_PACKAGE_NAME') do
+        BeakerPuppetHelpers::InstallUtils.collection2packagename(host, collection, prefer_aio: collection != 'none')
+      end
       host.install_package(package_name)
 
       # by default, puppet-agent creates /etc/profile.d/puppet-agent.sh which adds /opt/puppetlabs/bin to PATH
