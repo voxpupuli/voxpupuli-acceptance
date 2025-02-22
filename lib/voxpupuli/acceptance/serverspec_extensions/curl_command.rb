@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # written by https://github.com/ekohl
 # https://github.com/mizzy/serverspec/pull/611 was rejected so adding it here.
 

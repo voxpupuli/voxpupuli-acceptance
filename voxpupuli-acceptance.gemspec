@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |s|
   s.name        = 'voxpupuli-acceptance'
   s.version     = '3.4.0'

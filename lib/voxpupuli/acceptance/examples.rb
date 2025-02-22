@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples 'an idempotent resource' do |host|
   host ||= default
 

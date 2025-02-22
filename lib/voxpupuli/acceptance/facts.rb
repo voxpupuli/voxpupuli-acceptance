@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Voxpupuli
   module Acceptance
     class Facts
-      ENV_VAR_PREFIX = 'BEAKER_FACTER_'.freeze
-      FACT_FILE = '/etc/facter/facts.d/voxpupuli-acceptance-env.json'.freeze
+      ENV_VAR_PREFIX = 'BEAKER_FACTER_'
+      FACT_FILE = '/etc/facter/facts.d/voxpupuli-acceptance-env.json'
 
       class << self
         def beaker_facts_from_env

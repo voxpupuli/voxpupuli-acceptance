@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'examples'
 require_relative 'serverspec_extensions'
 
