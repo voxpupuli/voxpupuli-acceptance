@@ -14,16 +14,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       examples: ${{ steps.list_examples.outputs.examples }}
+      ruby: ${{ steps.ruby.outputs.versions }}
     name: Pre
     steps:
       - uses: actions/checkout@v4
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: '3.4'
       - name: List examples
         id: list_examples
         run: .github/script/examples
+      - id: ruby
+        uses: voxpupuli/ruby-version@v1
 
   unit:
     needs: pre
@@ -31,12 +34,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby:
-          - '3.3'
-          - '3.2'
-          - '3.1'
-          - '3.0'
-          - '2.7'
+        ruby: ${{ fromJSON(needs.rubocop_and_matrix.outputs.ruby) }}
     name: Unit / Ruby ${{ matrix.ruby }}
     steps:
       - uses: actions/checkout@v4
@@ -60,12 +58,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby:
-          - '3.3'
-          - '3.2'
-          - '3.1'
-          - '3.0'
-          - '2.7'
+        ruby: ${{ fromJSON(needs.rubocop_and_matrix.outputs.ruby) }}
         example: ${{ fromJson(needs.pre.outputs.examples) }}
     name: Acceptance / Ruby ${{ matrix.ruby }} - ${{ matrix.example }}
     steps:
