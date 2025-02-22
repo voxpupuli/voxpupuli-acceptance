@@ -1,5 +1,3 @@
-# -*- encoding: utf-8 -*-
-
 Gem::Specification.new do |s|
   s.name        = 'voxpupuli-acceptance'
   s.version     = '3.4.0'
@@ -15,19 +13,19 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.7', '< 4'
 
   # Testing
-  s.add_runtime_dependency 'bcrypt_pbkdf', '~> 1.1'
-  s.add_runtime_dependency 'beaker', '~> 6.0'
-  s.add_runtime_dependency 'beaker-docker', '~> 2.1'
-  s.add_runtime_dependency 'beaker-hiera', '~> 1.0'
-  s.add_runtime_dependency 'beaker-hostgenerator', '~> 2.2'
-  s.add_runtime_dependency 'beaker_puppet_helpers', '~> 1.3'
-  s.add_runtime_dependency 'beaker-rspec', '~> 8.0', '>= 8.0.1'
-  s.add_runtime_dependency 'beaker-vagrant', '~> 1.2'
-  s.add_runtime_dependency 'puppet-modulebuilder', '~> 2.0', '>= 2.0.2'
-  s.add_runtime_dependency 'rake', '~> 13.0', '>= 13.0.6'
-  s.add_runtime_dependency 'rspec-github', '~> 2.0'
-  s.add_runtime_dependency 'serverspec', '~> 2.42', '>= 2.42.2'
-  s.add_runtime_dependency 'winrm', '~> 2.3', '>= 2.3.6'
+  s.add_dependency 'bcrypt_pbkdf', '~> 1.1'
+  s.add_dependency 'beaker', '~> 6.0'
+  s.add_dependency 'beaker-docker', '~> 2.1'
+  s.add_dependency 'beaker-hiera', '~> 1.0'
+  s.add_dependency 'beaker-hostgenerator', '~> 2.2'
+  s.add_dependency 'beaker_puppet_helpers', '~> 1.3'
+  s.add_dependency 'beaker-rspec', '~> 8.0', '>= 8.0.1'
+  s.add_dependency 'beaker-vagrant', '~> 1.2'
+  s.add_dependency 'puppet-modulebuilder', '~> 2.0', '>= 2.0.2'
+  s.add_dependency 'rake', '~> 13.0', '>= 13.0.6'
+  s.add_dependency 'rspec-github', '~> 2.0'
+  s.add_dependency 'serverspec', '~> 2.42', '>= 2.42.2'
+  s.add_dependency 'winrm', '~> 2.3', '>= 2.3.6'
   s.add_development_dependency 'puppetlabs_spec_helper', '>= 4.0.0', '< 9'
   s.add_development_dependency 'voxpupuli-rubocop', '~> 3.0.0'
 end

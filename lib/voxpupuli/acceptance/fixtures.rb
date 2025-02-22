@@ -52,7 +52,7 @@ module Voxpupuli
                 if logger
                   logger.warn(warning)
                 else
-                  STDERR.puts(warning)
+                  warn(warning)
                 end
               end
 
@@ -101,9 +101,9 @@ module Voxpupuli
         #
         # @param [Host, String, Symbol] host
         #   The beaker host to run on
-        def temp_dir_on(host, &block)
-          result = on host, "mktemp -d"
-          raise "Could not create directory" unless result.success?
+        def temp_dir_on(host)
+          result = on host, 'mktemp -d'
+          raise 'Could not create directory' unless result.success?
 
           dir = result.stdout.strip
 

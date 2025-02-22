@@ -8,7 +8,7 @@ module Voxpupuli
     module ServerspecExtensions
       class CurlCommand < Serverspec::Type::Command
         def response_code
-          m = %r{Response-Code: (?<code>\d+)}.match(stderr)
+          m = /Response-Code: (?<code>\d+)/.match(stderr)
           return 0 unless m
 
           m[:code].to_i
@@ -27,7 +27,7 @@ module Voxpupuli
         def curl_command
           # curl supports %{stderr} to --write-out since 7.63.0
           # so the following doesn't work on EL8, which has curl 7.61.1
-          command = "curl --silent --write-out '%{stderr}Response-Code: %{response_code}\\n' '#{@name}'"
+          command = "curl --silent --write-out '%{stderr}Response-Code: %{response_code}\\n' '#{@name}'" # rubocop:disable Style/FormatStringToken
 
           @options.each do |option, value|
             case option

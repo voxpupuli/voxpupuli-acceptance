@@ -15,6 +15,7 @@ shared_examples 'the example' do |name, host|
     let(:manifest) do
       path = File.join(Dir.pwd, 'examples', name)
       raise Exception, "Example '#{path}' does not exist" unless File.exist?(path)
+
       File.read(path)
     end
   end

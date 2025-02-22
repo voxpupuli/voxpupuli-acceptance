@@ -19,7 +19,9 @@ def configure_beaker(modules: :metadata, &block)
       unless %w[none preinstalled].include?(collection)
         BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection)
       end
-      package_name = ENV.fetch('BEAKER_PUPPET_PACKAGE_NAME', BeakerPuppetHelpers::InstallUtils.puppet_package_name(host, prefer_aio: collection != 'none'))
+      package_name = ENV.fetch('BEAKER_PUPPET_PACKAGE_NAME',
+                               BeakerPuppetHelpers::InstallUtils.puppet_package_name(host,
+                                                                                     prefer_aio: collection != 'none'))
       host.install_package(package_name)
 
       # by default, puppet-agent creates /etc/profile.d/puppet-agent.sh which adds /opt/puppetlabs/bin to PATH
@@ -71,9 +73,7 @@ def configure_beaker(modules: :metadata, &block)
 end
 
 RSpec.configure do |c|
-  if ENV['GITHUB_ACTIONS'] == 'true'
-    c.formatter = 'RSpec::Github::Formatter'
-  end
+  c.formatter = 'RSpec::Github::Formatter' if ENV['GITHUB_ACTIONS'] == 'true'
 
   # Fact handling
   c.add_setting :suite_configure_facts_from_env, default: true
@@ -83,7 +83,7 @@ RSpec.configure do |c|
   c.add_setting :suite_hiera_data_dir, default: File.join('spec', 'acceptance', 'hieradata')
   c.add_setting :suite_hiera_hierachy, default: [
     {
-      name: "Per-node data",
+      name: 'Per-node data',
       path: 'fqdn/%{facts.networking.fqdn}.yaml',
     },
     {

@@ -1,8 +1,8 @@
 module Voxpupuli
   module Acceptance
     class Facts
-      ENV_VAR_PREFIX = 'BEAKER_FACTER_'
-      FACT_FILE = '/etc/facter/facts.d/voxpupuli-acceptance-env.json'
+      ENV_VAR_PREFIX = 'BEAKER_FACTER_'.freeze
+      FACT_FILE = '/etc/facter/facts.d/voxpupuli-acceptance-env.json'.freeze
 
       class << self
         def beaker_facts_from_env
@@ -23,7 +23,8 @@ module Voxpupuli
 
           if beaker_facts.any?
             require 'json'
-            on(hosts, "mkdir -p #{File.dirname(FACT_FILE)} && cat <<VOXPUPULI_BEAKER_ENV_VARS > #{FACT_FILE}\n#{beaker_facts.to_json}\nVOXPUPULI_BEAKER_ENV_VARS")
+            on(hosts,
+               "mkdir -p #{File.dirname(FACT_FILE)} && cat <<VOXPUPULI_BEAKER_ENV_VARS > #{FACT_FILE}\n#{beaker_facts.to_json}\nVOXPUPULI_BEAKER_ENV_VARS")
           else
             on(hosts, "rm -f #{FACT_FILE}")
           end
