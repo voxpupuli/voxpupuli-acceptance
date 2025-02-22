@@ -2,5 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'beaker_puppet_helpers', github: 'bastelfreak/beaker_puppet_helpers', branch: 'openvox'
+
 gem 'puppetlabs_spec_helper'
 gem 'voxpupuli-acceptance', path: '../..'
