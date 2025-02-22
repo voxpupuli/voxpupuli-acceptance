@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Voxpupuli
   module Acceptance
     class Facts
@@ -23,7 +25,8 @@ module Voxpupuli
 
           if beaker_facts.any?
             require 'json'
-            on(hosts, "mkdir -p #{File.dirname(FACT_FILE)} && cat <<VOXPUPULI_BEAKER_ENV_VARS > #{FACT_FILE}\n#{beaker_facts.to_json}\nVOXPUPULI_BEAKER_ENV_VARS")
+            on(hosts,
+               "mkdir -p #{File.dirname(FACT_FILE)} && cat <<VOXPUPULI_BEAKER_ENV_VARS > #{FACT_FILE}\n#{beaker_facts.to_json}\nVOXPUPULI_BEAKER_ENV_VARS")
           else
             on(hosts, "rm -f #{FACT_FILE}")
           end

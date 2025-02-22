@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'serverspec'
 require_relative 'serverspec_extensions/curl_command'
 

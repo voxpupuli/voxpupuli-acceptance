@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 begin
   # Fixtures can be needed because of spec_prep
   # spec_prep task is provided by puppetlabs_spec_helper
