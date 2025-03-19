@@ -2,14 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.5.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.5.1) (2025-03-19)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.5.0...3.5.1)
+
+**Fixed bugs:**
+
+- Support none and preinstalled collections again [\#96](https://github.com/voxpupuli/voxpupuli-acceptance/pull/96) ([ekohl](https://github.com/ekohl))
+
 ## [3.5.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.5.0) (2025-03-19)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.4.0...3.5.0)
 
 **Implemented enhancements:**
 
-- Implement OpenVox support [\#92](https://github.com/voxpupuli/voxpupuli-acceptance/pull/92) ([bastelfreak](https://github.com/bastelfreak))
 - Add Ruby 3.4 to CI [\#93](https://github.com/voxpupuli/voxpupuli-acceptance/pull/93) ([bastelfreak](https://github.com/bastelfreak))
+- Implement OpenVox support [\#92](https://github.com/voxpupuli/voxpupuli-acceptance/pull/92) ([bastelfreak](https://github.com/bastelfreak))
 
 **Merged pull requests:**
 

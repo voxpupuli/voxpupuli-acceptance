@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'voxpupuli-acceptance'
-  s.version     = '3.5.0'
+  s.version     = '3.5.1'
   s.authors     = ['Vox Pupuli']
   s.email       = ['voxpupuli@groups.io']
   s.homepage    = 'https://github.com/voxpupuli/voxpupuli-acceptance'
