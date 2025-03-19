@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.5.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.5.0) (2025-03-19)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.4.0...3.5.0)
+
+**Implemented enhancements:**
+
+- Implement OpenVox support [\#92](https://github.com/voxpupuli/voxpupuli-acceptance/pull/92) ([bastelfreak](https://github.com/bastelfreak))
+- Add Ruby 3.4 to CI [\#93](https://github.com/voxpupuli/voxpupuli-acceptance/pull/93) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add voxpupuli-rubocop [\#94](https://github.com/voxpupuli/voxpupuli-acceptance/pull/94) ([bastelfreak](https://github.com/bastelfreak))
+- gemspec: Use public mailing list for contact [\#91](https://github.com/voxpupuli/voxpupuli-acceptance/pull/91) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.4.0) (2025-01-20)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.3.0...3.4.0)
