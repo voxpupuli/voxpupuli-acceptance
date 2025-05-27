@@ -25,7 +25,9 @@ configure_beaker
 
 # Running tests
 
-This module provides rake helpers. It prefers [puppetlabs_spec_helper](https://github.com/puppetlabs/puppetlabs_spec_helper) but falls back to [beaker-rspec](https://github.com/voxpupuli/beaker-rspec). Commonly invoked as:
+This module provides rake helpers.
+They are based on [beaker-rspec](https://github.com/voxpupuli/beaker-rspec).
+Commonly invoked as:
 
 To do so, in your `Rakefile`
 
@@ -132,12 +134,17 @@ An alternative is to use the fixtures:
 configure_beaker(modules: :fixtures)
 ```
 
-This will switch to use [puppet-modulebuilder](https://github.com/puppetlabs/puppet-modulebuilder) on all modules present in `spec/fixtures/modules`. This is faster, but more importantly it also allows using git versions of modules. No dependency resolution is done and it is up to the module developer to ensure it's a correct set. It is also up to the module developer to ensure the fixtures are checked out before beaker runs.
+This will switch to use [puppet-modulebuilder](https://github.com/puppetlabs/puppet-modulebuilder) on all modules present in `spec/fixtures/modules`.
+This is faster, but more importantly it also allows using git versions of modules.
+No dependency resolution is done and it is up to the module developer to ensure it's a correct set.
+It is also up to the module developer to ensure the fixtures are checked out before beaker runs.
 
 ```ruby
 # In Rakefile
-task :beaker => "spec_prep"
+task :beaker => "fixtures:prep"
 ```
+
+The `fixtures:prep` task is provided by the [puppet_fixtures](https://github.com/voxpupuli/puppet_fixtures/blob/master/lib/puppet_fixtures/tasks.rb) gem.
 
 ### None
 
