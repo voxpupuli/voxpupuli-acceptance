@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.6.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.6.0) (2025-05-27)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.5.1...3.6.0)
+
+**Implemented enhancements:**
+
+- Replace puppetlabs\_spec\_helper with puppet\_fixtures [\#100](https://github.com/voxpupuli/voxpupuli-acceptance/pull/100) ([bastelfreak](https://github.com/bastelfreak))
+- Add new shared example with debug output [\#98](https://github.com/voxpupuli/voxpupuli-acceptance/pull/98) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.5.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.5.1) (2025-03-19)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.5.0...3.5.1)
