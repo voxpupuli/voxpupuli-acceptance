@@ -236,6 +236,22 @@ describe 'myclass' do
 end
 ```
 
+### An idempotent resource with debug
+
+This is the same as above, but it runs `puppet apply --debug...`
+
+```ruby
+describe 'myclass' do
+  it_behaves_like 'an idempotent resource with debug' do
+    let(:manifest) do
+      <<-PUPPET
+      include myclass
+      PUPPET
+    end
+  end
+end
+```
+
 ### Examples
 
 In modules there's the convention to have an examples directory. It's actually great to test these in acceptance. For this a shared example is available:
