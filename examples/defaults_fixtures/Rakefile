@@ -3,4 +3,4 @@
 require 'voxpupuli/acceptance/rake'
 
 # We use fixtures in our modules, which is not the default
-task beaker: 'spec_prep'
+task beaker: 'fixtures:prep'
