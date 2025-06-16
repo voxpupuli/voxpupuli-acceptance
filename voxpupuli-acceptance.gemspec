@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'beaker_puppet_helpers', '~> 2.2'
   s.add_dependency 'beaker-rspec', '~> 8.0', '>= 8.0.1'
   s.add_dependency 'beaker-vagrant', '~> 1.2'
-  s.add_dependency 'puppet_fixtures', '~> 0.1.0'
+  s.add_dependency 'puppet_fixtures', '>= 0.1', '< 2'
   s.add_dependency 'puppet-modulebuilder', '~> 2.0', '>= 2.0.2'
   s.add_dependency 'rake', '~> 13.0', '>= 13.0.6'
   s.add_dependency 'rspec-github', '~> 2.0'
