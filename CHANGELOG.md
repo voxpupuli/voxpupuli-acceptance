@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.7.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.7.0) (2025-06-16)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.6.0...3.7.0)
+
+**Implemented enhancements:**
+
+- puppet\_fixtures: Allow 1.x [\#105](https://github.com/voxpupuli/voxpupuli-acceptance/pull/105) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.6.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.6.0) (2025-05-27)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.5.1...3.6.0)
