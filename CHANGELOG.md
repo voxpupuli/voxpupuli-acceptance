@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.8.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.8.0) (2025-06-18)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.7.0...3.8.0)
+
+**Implemented enhancements:**
+
+- set default BEAKER\_PUPPET\_COLLECTION from puppet-\>openvox8 [\#108](https://github.com/voxpupuli/voxpupuli-acceptance/pull/108) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.7.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.7.0) (2025-06-16)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.6.0...3.7.0)
