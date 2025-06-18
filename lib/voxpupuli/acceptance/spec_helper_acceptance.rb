@@ -4,7 +4,7 @@ require_relative 'examples'
 require_relative 'serverspec_extensions'
 
 def configure_beaker(modules: :metadata, &block)
-  collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'puppet'
+  collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'openvox8'
   ENV['BEAKER_DEBUG'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
