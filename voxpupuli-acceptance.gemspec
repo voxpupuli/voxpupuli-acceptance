@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['lib/**/*.rb']
 
-  s.required_ruby_version = '>= 2.7', '< 4'
+  s.required_ruby_version = '>= 3.2', '< 4'
 
   # Testing
   s.add_dependency 'bcrypt_pbkdf', '~> 1.1'
@@ -29,5 +29,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec-github', '~> 2.0'
   s.add_dependency 'serverspec', '~> 2.42', '>= 2.42.2'
   s.add_dependency 'winrm', '~> 2.3', '>= 2.3.6'
-  s.add_development_dependency 'voxpupuli-rubocop', '~> 3.1.0'
+  s.add_development_dependency 'voxpupuli-rubocop', '~> 4.2.0'
 end
