@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   # Testing
   s.add_dependency 'bcrypt_pbkdf', '~> 1.1'
   s.add_dependency 'beaker', '>= 6.0', '< 8'
-  s.add_dependency 'beaker-docker', '~> 2.1'
+  s.add_dependency 'beaker-docker', '>= 2.1', '< 4'
   s.add_dependency 'beaker-hiera', '>= 1.0', '< 3'
   s.add_dependency 'beaker-hostgenerator', '>= 2.2', '< 4'
   s.add_dependency 'beaker_puppet_helpers', '>= 2.2', '< 4'
