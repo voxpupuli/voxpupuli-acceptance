@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.0.0) (2025-08-11)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.8.0...4.0.0)
+
+**Breaking changes:**
+
+- Require Ruby 3.2 or newer [\#112](https://github.com/voxpupuli/voxpupuli-acceptance/pull/112) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- beaker-docker: Allow 3.x [\#116](https://github.com/voxpupuli/voxpupuli-acceptance/pull/116) ([bastelfreak](https://github.com/bastelfreak))
+- beaker components: Allow latest versions [\#114](https://github.com/voxpupuli/voxpupuli-acceptance/pull/114) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- ci workflow: use Debian 12 instead of EOL Debian 10 [\#111](https://github.com/voxpupuli/voxpupuli-acceptance/pull/111) ([kenyon](https://github.com/kenyon))
+
 ## [3.8.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/3.8.0) (2025-06-18)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.7.0...3.8.0)
