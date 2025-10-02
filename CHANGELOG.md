@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.1.0) (2025-10-02)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.0.0...4.1.0)
+
+**Implemented enhancements:**
+
+- puppet\_fixtures: Allow 2.x [\#119](https://github.com/voxpupuli/voxpupuli-acceptance/pull/119) ([Joris29](https://github.com/Joris29))
+
 ## [4.0.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.0.0) (2025-08-11)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/3.8.0...4.0.0)
