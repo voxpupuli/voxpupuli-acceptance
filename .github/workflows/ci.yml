@@ -17,7 +17,7 @@ jobs:
       ruby: ${{ steps.ruby.outputs.versions }}
     name: Pre
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -40,7 +40,7 @@ jobs:
         ruby: ${{ fromJSON(needs.pre.outputs.ruby) }}
     name: Unit / Ruby ${{ matrix.ruby }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -65,7 +65,7 @@ jobs:
         example: ${{ fromJson(needs.pre.outputs.examples) }}
     name: Acceptance / Ruby ${{ matrix.ruby }} - ${{ matrix.example }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
