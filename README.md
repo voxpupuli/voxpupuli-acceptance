@@ -280,6 +280,15 @@ Some [Serverspec](https://serverspec.org/) extensions are shipped and enabled by
 Often you want to test some service that exposes things over HTTP.
 Instead of using [`command("curl …")`](https://serverspec.org/resource_types.html#command) you can use `curl_command(…)` which behaves like a Serverspec `command` but adds matchers for the HTTP response code and the response body.
 
+Various parameters map to curl CLI options.
+The following parameters are supported (they map directly to the curl CLI options, check the curl manpage for details):
+
+* `headers` ( hash of header options
+* `user`
+* `cacert`
+* `cert`
+* `key`
+
 ```ruby
 describe curl_command("http://localhost:8080/api/ping") do
   its(:response_code) { is_expected.to eq(200) }
@@ -287,6 +296,11 @@ describe curl_command("http://localhost:8080/api/ping") do
 end
 
 describe curl_command('http://localhost:8080/api/status', headers: { 'Accept' => 'application/json' }) do
+  its(:response_code) { is_expected.to eq(200) }
+  its(:body_as_json) { is_expected.to eq({'status': 'ok'}) }
+end
+
+describe curl_command('http://localhost:8080/api/status', user: 'foo:bar', cacert: '/tmp/ca.pem', cert: '/tmp/baz.pem', key: '/tmp/baz.key') do
   its(:response_code) { is_expected.to eq(200) }
   its(:body_as_json) { is_expected.to eq({'status': 'ok'}) }
 end
