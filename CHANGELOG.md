@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.2.0) (2025-11-29)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.1.0...4.2.0)
+
+**Implemented enhancements:**
+
+- curl\_command: Add support for --user option [\#124](https://github.com/voxpupuli/voxpupuli-acceptance/pull/124) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [4.1.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.1.0) (2025-10-02)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.0.0...4.1.0)
