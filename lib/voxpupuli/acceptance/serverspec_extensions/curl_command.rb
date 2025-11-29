@@ -33,7 +33,7 @@ module Voxpupuli
 
           @options.each do |option, value|
             case option
-            when :cacert, :cert, :key
+            when :cacert, :cert, :key, :user
               command += " --#{option} '#{value}'"
             when :headers
               value.each do |header, header_value|
