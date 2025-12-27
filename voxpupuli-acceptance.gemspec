@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.files       = Dir['lib/**/*.rb']
 
-  s.required_ruby_version = '>= 3.2', '< 4'
+  s.required_ruby_version = '>= 3.2', '< 5'
 
   # Testing
   s.add_dependency 'bcrypt_pbkdf', '~> 1.1'
