@@ -21,7 +21,7 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4'
+          ruby-version: '4.0'
           bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rake rubocop
@@ -29,7 +29,7 @@ jobs:
         id: list_examples
         run: .github/script/examples
       - id: ruby
-        uses: voxpupuli/ruby-version@v1
+        uses: voxpupuli/ruby-version@v2
 
   unit:
     needs: pre
