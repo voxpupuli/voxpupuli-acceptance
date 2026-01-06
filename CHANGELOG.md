@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.3.0) (2026-01-06)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.2.0...4.3.0)
+
+**Implemented enhancements:**
+
+- Add Ruby 4.0 support [\#130](https://github.com/voxpupuli/voxpupuli-acceptance/pull/130) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [4.2.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.2.0) (2025-11-29)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.1.0...4.2.0)
