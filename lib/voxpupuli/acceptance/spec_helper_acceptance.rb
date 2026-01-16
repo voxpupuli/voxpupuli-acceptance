@@ -62,6 +62,7 @@ def configure_beaker(modules: :metadata, &block)
           copy_hiera_data_to(hosts, hiera_data_dir)
         end
       end
+      on(hosts, 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6') if enable_ipv6
 
       local_setup = RSpec.configuration.setup_acceptance_node
       local_setup_content = File.exist?(local_setup) ? File.read(local_setup) : nil
