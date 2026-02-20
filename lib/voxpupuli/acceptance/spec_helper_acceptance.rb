@@ -5,6 +5,8 @@ require_relative 'serverspec_extensions'
 
 def configure_beaker(modules: :metadata, &block)
   collection = ENV['BEAKER_PUPPET_COLLECTION'] || 'openvox8'
+  staging_url = ENV['BEAKER_STAGING_URL'] || 'https://artifacts.voxpupuli.org/openvox-agent'
+  staging_version = ENV.fetch('BEAKER_STAGING_VERSION', nil)
   ENV['BEAKER_DEBUG'] ||= 'true'
   ENV['BEAKER_HYPERVISOR'] ||= 'docker'
 
@@ -18,7 +20,11 @@ def configure_beaker(modules: :metadata, &block)
 
   unless ENV['BEAKER_PROVISION'] == 'no'
     block_on hosts, run_in_parallel: true do |host|
-      if collection != 'preinstalled'
+      if collection == 'staging'
+        raise StandardError, "staging server '#{staging_url}' configured, but no BEAKER_STAGING_VERSION environment variable set" unless staging_version
+
+        BeakerPuppetHelpers::InstallUtils.install_openvox_agent_from_url_on(host, staging_url, staging_version)
+      elsif collection != 'preinstalled'
         if collection != 'none'
           BeakerPuppetHelpers::InstallUtils.install_puppet_release_repo_on(host, collection)
         end
