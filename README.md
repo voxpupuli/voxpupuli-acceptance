@@ -6,7 +6,9 @@
 [![RubyGem Version](https://img.shields.io/gem/v/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
 [![RubyGem Downloads](https://img.shields.io/gem/dt/voxpupuli-acceptance.svg)](https://rubygems.org/gems/voxpupuli-acceptance)
 
-This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules using [beaker](https://github.com/voxpupuli/beaker). This Gem provides common functionality for all beaker based acceptance testing. The aim is to reduce the boiler plate and need for modulesync.
+This is a helper Gem to acceptance test the various Vox Pupuli Puppet modules using [beaker](https://github.com/voxpupuli/beaker).
+This Gem provides common functionality for all beaker based acceptance testing.
+The aim is to reduce the boiler plate and need for modulesync.
 
 # Usage
 Add the `voxpupuli-acceptance` Gem to your `Gemfile`:
@@ -85,13 +87,17 @@ To use [vagrant-libvirt](https://github.com/vagrant-libvirt/vagrant-libvirt), us
 BEAKER_HYPERVISOR=vagrant_libvirt
 ```
 
-The `Vagrantfile` for the created virtual machines will be in `.vagrant/beaker_vagrant_files`. From there you can use `vagrant ssh` as you normally would.
+The `Vagrantfile` for the created virtual machines will be in `.vagrant/beaker_vagrant_files`.
+From there you can use `vagrant ssh` as you normally would.
 
 # Customizing host configuration
 
 ## Per host configuration
 
-It is possible to use Puppet to set up an acceptance node. By default `spec/setup_acceptance_node.pp` is used if it exists. This can be changed. Use `false` to disable this behavior even if the file exists.
+It is possible to use Puppet to set up an acceptance node.
+By default `spec/setup_acceptance_node.pp` is used if it exists.
+This can be changed.
+Use `false` to disable this behavior even if the file exists.
 
 ```ruby
 RSpec.configure do |c|
@@ -119,7 +125,9 @@ This block is executed after all host configuration is done except applying the 
 
 ### Metadata
 
-By default the module uses [beaker-module_install_helper](https://github.com/puppetlabs/beaker-module_install_helper). Its approach is copying the module and then install every dependency as listed in the module's metadata.json. This is a slow process and if the latest modules aren't accepted, it can lead to problems.
+By default the module uses [beaker-module_install_helper](https://github.com/puppetlabs/beaker-module_install_helper).
+Its approach is copying the module and then install every dependency as listed in the module's metadata.json.
+This is a slow process and if the latest modules aren't accepted, it can lead to problems.
 
 ```ruby
 # This is the default
@@ -155,9 +163,12 @@ configure_beaker(modules: nil)
 
 ## Environment variables to facts
 
-It can be useful to provide facts via environment variables. A possible use is run the test suite with version 1.0 and 1.1. Often it's much easier to run the entire suite with version 1.0 and run it with 1.1 in a complete standalone fashion.
+It can be useful to provide facts via environment variables.
+A possible use is run the test suite with version 1.0 and 1.1.
+Often it's much easier to run the entire suite with version 1.0 and run it with 1.1 in a complete standalone fashion.
 
-Voxpupuli-acceptance converts all environment variables starting with `BEAKER_FACTER_` and stores them in `/etc/facter/facts.d/voxpupuli-acceptance-env.json` on the target machine. All environment variables are converted to lowercase.
+Voxpupuli-acceptance converts all environment variables starting with `BEAKER_FACTER_` and stores them in `/etc/facter/facts.d/voxpupuli-acceptance-env.json` on the target machine.
+All environment variables are converted to lowercase.
 
 Given following `spec_helper_acceptance.rb` is used:
 
@@ -183,7 +194,8 @@ BEAKER_FACTER_MYMODULE_VERSION=1.1 bundle exec rake beaker
 
 Many CI systems make it easy to build a matrix with this.
 
-If no environment variables are present, the file is removed. It is not possible to store structured facts.
+If no environment variables are present, the file is removed.
+It is not possible to store structured facts.
 
 This behavior can be disabled altogether:
 
@@ -195,9 +207,13 @@ end
 
 ## Hiera
 
-In many acceptance tests it's useful to override some defaults. For example, `configure_repository` should default to false in the module but is always on in acceptance tests. Hiera is a good tool for this and using [beaker-hiera](https://github.com/voxpupuli/beaker-hiera) it's easy and on by default.
+In many acceptance tests it's useful to override some defaults.
+For example, `configure_repository` should default to false in the module but is always on in acceptance tests.
+Hiera is a good tool for this and using [beaker-hiera](https://github.com/voxpupuli/beaker-hiera) it's easy and on by default.
 
-To use this, create `spec/acceptance/hieradata` and use it as a regular Hiera data directory. It can be changed as follows. The defaults are shown:
+To use this, create `spec/acceptance/hieradata` and use it as a regular Hiera data directory.
+It can be changed as follows. The defaults are shown:
+
 ```ruby
 RSpec.configure do |c|
   c.suite_hiera = true
@@ -225,11 +241,14 @@ end
 
 ## Shared examples
 
-Some [RSpec shared examples](https://rspec.info/features/3-12/rspec-core/example-groups/shared-examples/) are shipped by default. These make it easier to write tests.
+Some [RSpec shared examples](https://rspec.info/features/3-12/rspec-core/example-groups/shared-examples/) are shipped by default.
+These make it easier to write tests.
 
 ### An idempotent resource
 
-Often you want to test some manifest is idempotent. This means applying a manifest and ensuring there are no failures. It then applies again and ensures no changes were made.
+Often you want to test some manifest is idempotent.
+This means applying a manifest and ensuring there are no failures.
+It then applies again and ensures no changes were made.
 
 ```ruby
 describe 'myclass' do
@@ -261,7 +280,9 @@ end
 
 ### Examples
 
-In modules there's the convention to have an examples directory. It's actually great to test these in acceptance. For this a shared example is available:
+In modules there's the convention to have an examples directory.
+It's actually great to test these in acceptance.
+For this a shared example is available:
 
 ```ruby
 describe 'my example' do
@@ -269,11 +290,13 @@ describe 'my example' do
 end
 ```
 
-For this `examples/my_example.pp` must exist and contain valid Puppet code. It then uses the idempotent resource shared example.
+For this `examples/my_example.pp` must exist and contain valid Puppet code.
+It then uses the idempotent resource shared example.
 
 ## Serverspec extensions
 
-Some [Serverspec](https://serverspec.org/) extensions are shipped and enabled by default. These make it easier to write tests but were not accepted by Serverspec upstream.
+Some [Serverspec](https://serverspec.org/) extensions are shipped and enabled by default.
+These make it easier to write tests but were not accepted by Serverspec upstream.
 
 ### `curl_command`
 
