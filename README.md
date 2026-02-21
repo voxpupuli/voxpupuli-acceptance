@@ -52,8 +52,10 @@ Other common environment variables:
 * `BEAKER_DESTROY` can be set to `no` to avoid destroying the box after completion. Useful to inspect failures. Another common value is `onpass` which deletes it only when the tests pass.
 * `BEAKER_PROVISION` can be set to `no` to reuse a box. Note that the box must exist already. See `BEAKER_DESTROY`. Known to be broken with [beaker-docker](https://github.com/voxpupuli/beaker-docker).
 * `BEAKER_SETFILE` is used to point to a setfile containing definitions. To avoid storing large YAML files in all repositories, [beaker-hostgenerator](https://github.com/voxpupuli/beaker-hostgenerator) is used to generate them on the fly when the file is not present.
-* `BEAKER_PUPPET_COLLECTION` defines the puppet collection that will be configured, defaults to `puppet`. When set to `none`, no repository will be configured and distro package naming is assumed. When set to `preinstalled`, it assumes the OS is already set up with a collection and Puppet/OpenVox package.
+* `BEAKER_PUPPET_COLLECTION` defines the puppet collection that will be configured, defaults to `puppet`. When set to `none`, no repository will be configured and distro package naming is assumed. When set to `preinstalled`, it assumes the OS is already set up with a collection and Puppet/OpenVox package. Other common values: `puppet7`, `puppet8`, `openvox7`, `openvox8`, `staging`.
 * `BEAKER_PUPPET_PACKAGE_NAME` optional env var to set the puppet agent package name. If not set, the package name will be determined using [puppet_metadata](https://github.com/voxpupuli/puppet_metadata#puppet_metadata).
+* `BEAKER_STAGING_VERSION` desired agent version for staging packages. The variable is ignored if `BEAKER_PUPPET_COLLECTION` isn't set to `staging`.
+* `BEAKER_STAGING_URL` if set, we will install the agent from the provided web directory. We won't configure a repository. The URI is `$BEAKER_STAGING_URL/$BEAKER_STAGING_VERSION/$BEAKER_PUPPET_PACKAGE_NAME-$BEAKER_STAGING_VERSION-$os-$arch.(rpm|deb)`. This maps to our layout on [artifacts.voxpupuli.org/openvox-agent](https://artifacts.voxpupuli.org/openvox-agent/).
 
 Since it's still plain [RSpec](https://rspec.info/), it is also possible to call an individual test file:
 
