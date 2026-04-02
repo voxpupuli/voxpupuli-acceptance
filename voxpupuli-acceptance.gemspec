@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'voxpupuli-acceptance'
-  s.version     = '4.3.0'
+  s.version     = '4.4.0'
   s.authors     = ['Vox Pupuli']
   s.email       = ['voxpupuli@groups.io']
   s.homepage    = 'https://github.com/voxpupuli/voxpupuli-acceptance'
@@ -13,6 +13,13 @@ Gem::Specification.new do |s|
   s.files       = Dir['lib/**/*.rb']
 
   s.required_ruby_version = '>= 3.2', '< 5'
+
+  s.metadata = {
+    'source_code_uri' => 'https://github.com/voxpupuli/voxpupuli-acceptance',
+    'changelog_uri' => 'https://github.com/voxpupuli/voxpupuli-acceptance/blob/main/CHANGELOG.md',
+    'bug_tracker_uri' => 'https://github.com/voxpupuli/voxpupuli-acceptance/issues',
+    'rubygems_mfa_required' => 'true',
+  }
 
   # Testing
   s.add_dependency 'bcrypt_pbkdf', '~> 1.1'

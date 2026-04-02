@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.4.0) (2026-04-02)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.3.0...4.4.0)
+
+**Implemented enhancements:**
+
+- Implement support for installing staging packages [\#132](https://github.com/voxpupuli/voxpupuli-acceptance/pull/132) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [4.3.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.3.0) (2026-01-06)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.2.0...4.3.0)
