@@ -20,6 +20,8 @@ def configure_beaker(modules: :metadata, &block)
 
   unless ENV['BEAKER_PROVISION'] == 'no'
     block_on hosts, run_in_parallel: true do |host|
+      disable_dnssec_validation_on(host)
+
       if collection == 'staging'
         raise StandardError, "staging server '#{staging_url}' configured, but no BEAKER_STAGING_VERSION environment variable set" unless staging_version
 
@@ -81,6 +83,29 @@ def configure_beaker(modules: :metadata, &block)
       end
     end
   end
+end
+
+# Ubuntu cloud images ship systemd-resolved with DNSSEC=yes but without the
+# dns-root-data package. The root trust anchor /usr/share/dns/root.key is then
+# missing and every lookup fails with
+# "DNSSEC validation failed: missing-key", which breaks the package
+# installation done by configure_beaker. The command is a no-op on hosts that
+# have the trust anchor, that do not use systemd-resolved, or that do not run
+# systemd as init (for example containers).
+DNSSEC_VALIDATION_FIX = <<~SHELL
+  if [ ! -f /usr/share/dns/root.key ] &&
+     [ -f /etc/systemd/resolved.conf ] &&
+     [ "$(ps -p 1 -o comm= 2>/dev/null)" = "systemd" ] &&
+     grep -q '^#*DNSSEC=yes' /etc/systemd/resolved.conf; then
+    sed -i 's/^#*DNSSEC=.*/DNSSEC=no/' /etc/systemd/resolved.conf
+    systemctl restart systemd-resolved
+  fi
+SHELL
+
+def disable_dnssec_validation_on(host)
+  return unless host['platform'].to_s.start_with?('debian', 'ubuntu')
+
+  on(host, DNSSEC_VALIDATION_FIX)
 end
 
 RSpec.configure do |c|
