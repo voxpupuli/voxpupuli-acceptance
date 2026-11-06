@@ -20,7 +20,10 @@ def configure_beaker(modules: :metadata, &block)
 
   unless ENV['BEAKER_PROVISION'] == 'no'
     block_on hosts, run_in_parallel: true do |host|
-      disable_dnssec_validation_on(host)
+      # Only hosts that run systemd-resolved can be affected. Windows, BSD and
+      # macOS hosts do not have the file, and the command itself re-checks the
+      # remaining conditions.
+      disable_dnssec_validation_on(host) if host.file_exist?('/etc/systemd/resolved.conf')
 
       if collection == 'staging'
         raise StandardError, "staging server '#{staging_url}' configured, but no BEAKER_STAGING_VERSION environment variable set" unless staging_version
@@ -85,26 +88,24 @@ def configure_beaker(modules: :metadata, &block)
   end
 end
 
-# Ubuntu cloud images ship systemd-resolved with DNSSEC=yes but without the
-# dns-root-data package. The root trust anchor /usr/share/dns/root.key is then
-# missing and every lookup fails with
+# Debian and Ubuntu cloud images ship systemd-resolved with DNSSEC=yes but
+# without dns-root-data. When the built-in trust anchor is older than the
+# current root KSK, every lookup fails with
 # "DNSSEC validation failed: missing-key", which breaks the package
-# installation done by configure_beaker. The command is a no-op on hosts that
-# have the trust anchor, that do not use systemd-resolved, or that do not run
-# systemd as init (for example containers).
+# installation done by configure_beaker. The command is a no-op unless the
+# host runs systemd as init, has no local trust anchor, and resolution really
+# fails with that error, so hosts with a current trust anchor are unaffected.
 DNSSEC_VALIDATION_FIX = <<~SHELL
   if [ ! -f /usr/share/dns/root.key ] &&
      [ -f /etc/systemd/resolved.conf ] &&
      [ "$(ps -p 1 -o comm= 2>/dev/null)" = "systemd" ] &&
-     grep -q '^#*DNSSEC=yes' /etc/systemd/resolved.conf; then
+     resolvectl query --cache=no example.com 2>&1 | grep -q 'DNSSEC validation failed: missing-key'; then
     sed -i 's/^#*DNSSEC=.*/DNSSEC=no/' /etc/systemd/resolved.conf
     systemctl restart systemd-resolved
   fi
 SHELL
 
 def disable_dnssec_validation_on(host)
-  return unless host['platform'].to_s.start_with?('debian', 'ubuntu')
-
   on(host, DNSSEC_VALIDATION_FIX)
 end
 
