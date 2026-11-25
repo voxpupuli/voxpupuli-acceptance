@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.4.1](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.4.1) (2026-11-25)
+
+[Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.4.0...4.4.1)
+
+**Fixed bugs:**
+
+- Repair DNSSEC validation on systems without a root trust anchor [\#157](https://github.com/voxpupuli/voxpupuli-acceptance/pull/157) ([alaunay](https://github.com/alaunay))
+
+**Closed issues:**
+
+- Dependency Dashboard [\#156](https://github.com/voxpupuli/voxpupuli-acceptance/issues/156)
+
+**Merged pull requests:**
+
+- pin all external actions [\#141](https://github.com/voxpupuli/voxpupuli-acceptance/pull/141) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [4.4.0](https://github.com/voxpupuli/voxpupuli-acceptance/tree/4.4.0) (2026-04-02)
 
 [Full Changelog](https://github.com/voxpupuli/voxpupuli-acceptance/compare/4.3.0...4.4.0)
